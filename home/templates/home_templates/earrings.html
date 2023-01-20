@@ -1,0 +1,655 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/earrings.css' %}">
+    <style>
+        .maindiv {
+            width: 100%;
+            height: auto;
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        #btn:hover {
+            background-color: rgb(5, 5, 69);
+            color: aliceblue;
+
+        }
+
+        ul {
+            list-style: outside none none;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .tanishqimg {
+            width: 50%;
+            height: auto;
+
+        }
+
+        .tablediv {
+            /* margin-top: 5px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px; */
+            /* width: 100%;
+            height: 100px; */
+            background-color: rgb(169, 143, 235);
+            font-size: larger;
+            text-align: center;
+        }
+
+        .items {
+            background-color: rgb(6, 28, 93);
+            font-size: smaller;
+            color: rgb(228, 227, 235);
+            width: 100%;
+            height: auto;
+
+        }
+
+        #alllabel {
+            width: 120px;
+            color: rgb(238, 236, 234);
+            /* background-color: rgb(93, 93, 176); */
+            border-radius: 3px;
+            position: sticky;
+            /* width:100%;
+            height: auto; */
+
+        }
+
+        .search {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: auto auto auto;
+            grid-gap: 80px;
+        }
+
+        .container div {
+            padding: 10px;
+        }
+
+        .nec_types {
+            background: #e0f2f1;
+            width: 200px;
+            height: 300px;
+
+        }
+        .col{
+            background: #e0f2f1;
+            width: 600px;
+            height: 600px;
+        }
+
+        div.nec_types:hover {
+            border: 1px solid #777;
+        }
+        div.col{
+            border: 1px solid #777;
+        }
+
+        div.nec_types {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 180px;
+            border-left: 20px;
+            border-right: 20px;
+            border-top: 40px;
+            border-bottom: 20px;
+        }
+
+        div.col{
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 600px;
+            border-left: 20px;
+            border-right: 20px;
+            border-top: 40px;
+            border-bottom: 20px;
+        }
+        .imgwidth {
+            width: 180px;
+            height: 180px;
+        }
+        .imgwidth1 {
+            width: 600px;
+            height: 600px;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        #tlbcontainer {
+            align-content: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .containerclass {
+            padding: 40px;
+
+        }
+
+        .ion-social-facebook:hover {
+            background-color: rgb(167, 170, 170);
+
+        }
+
+        .ion-social-twitter:hover {
+            background-color: rgb(167, 170, 170);
+
+
+        }
+
+        .ion-social-instagram:hover {
+            background-color: rgb(167, 170, 170);
+
+        }
+
+        .ion-social-linkedin:hover {
+            background-color: rgb(167, 170, 170);
+
+        }
+
+        .ion-social-youtube:hover {
+            background-color: rgb(167, 170, 170);
+
+        }
+        @media screen and (max-width: 500px) {
+
+.maindiv,
+.tablediv,
+.social_icone,
+.items,
+.bodydiv,
+.containerdiv,
+
+.neck_types,
+.footerdiv,
+.search,
+.tanishqtlb,
+.tanishqimg,
+.itemslabel,
+.containerclass,.desc,.bd{
+    width: 10%;
+
+}
+}
+h4:hover{
+font-style: italic;
+}
+p:hover{
+    color: red;
+}
+    </style>
+</head>
+
+<body class="bd">
+
+    <div class="maindiv">
+        <div class="tablediv">
+
+            <table width="100%">
+                <tr>
+                    <td align="left">
+                        <img class="tanishqimg" src="{% static 'images/Tanishq.jpg' %}" ,width="5px" ,height="5px">
+                    </td>
+                    <td colspan="3" align="center">
+                        <div class="search">
+                            <input type="text" id="fname" name="firstname" placeholder="Search....">
+                        </div>
+                    </td>
+                    <td><a href="{% url 'home:login' %}">Login</a></td>
+                    <td>
+                        <div class="social_icone">
+                            <ul>
+                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+            <div class="items">
+                <table id="itemslabel" width="100%px">
+
+                    <tr>
+                        <td>
+                            <a href="{% url 'home:homepage' %}"> <label id="alllabel">ALL JEWELLERY</label></a>
+
+                        </td>
+                        <td>
+
+                            <a href="{% url 'home:earrings' %}"><label id="alllabel">EARRINGS</label></a>
+                        </td>
+                        <td>
+                            <a href="{% url 'home:rings' %}"><label id="alllabel">RINGS</label></a>
+                        </td>
+                        <td>
+                            <a href="{% url 'home:necklaces' %}"><label id="alllabel">NECKLACES</label></a>
+                        </td>
+                        <td>
+                            <a href="#"><label id="alllabel">GOLD</label></a>
+                        </td>
+                        <td>
+                            <a href="#"> <label id="alllabel">DIAMOND</label></a>
+                        </td>
+                        <td>
+                            <a href="#"><label id="alllabel">MIA</label></a>
+                        </td>
+                        <td>
+                            <a href="#"><label id="alllabel">COLLECTIONS</label></a>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <div class="containerclass">
+            <section class="container">
+                <table id="tlbcontainer">
+                    <tr>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earing1.jpg' %}">
+                                <div class="desc">22k Gold chandbali earrings RS:48900 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earing2.jpg' %}">
+                                <div class="desc">Diamond earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+
+                                </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earing3.jpg' %}">
+                                <div class="desc">Diamond earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earing4.jpg' %}">
+                                <div class="desc">Diamond earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earing5.jpg' %}">
+                                <div class="desc">Diamond earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earing6.jpg' %}">
+                                <div class="desc">Diamond earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring7.jpg' %}">
+                                <div class="desc">Gold earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring8.jpg' %}">
+                                <div class="desc">Diamond earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring9.jpg' %}">
+                                <div class="desc">silver Diamond earrings RS:962145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring10.jpg' %}">
+                                <div class="desc">Red Diamond earrings RS:789245 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring11.jpg' %}">
+                                <div class="desc">Matte finish gold earring with hanging stone RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring12.jpg' %}">
+                                <div class="desc">Royal blue Earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="3"rowspan="2">
+                            <div class="col">
+                                <img class="imgwidth1" src="{% static 'images/wearing.jpg' %}">
+                               
+                                </div>
+                            </div>
+                        </td>
+                        
+                       
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring13.jpg' %}">
+                                <div class="desc">Royal blue Earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring14.jpg' %}">
+                                <div class="desc">Jujia 5 color design flower crystal earings RS:82145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring15.jpg' %}">
+                                <div class="desc">Classic silver earring with mirror RS:2145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                       
+                       
+                        
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring16.jpg' %}">
+                                <div class="desc">Precious antique real kemp royal kakshmi hyge jhumkas RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring17.jpg' %}">
+                                <div class="desc">Diamond earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/eearing18.jpg' %}">
+                                <div class="desc">Shede embellished with crystal from swarovski drop earrings RS:88845 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring19.jpg' %}">
+                                <div class="desc">Silver earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring20.jpg' %}">
+                                <div class="desc">sterling silver earrings RS:52145 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring21.png' %}">
+                                <div class="desc">antique studs-antiquee jimikki earrings RS:25000 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring22.jpg' %}">
+                                <div class="desc">Ms girls fashion 18k gold plated small butterfly earrings RS:9998 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring23.jpg' %}">
+                                <div class="desc">Four leaf japanese and korean temperament earrings silver earrings RS:10000 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="nec_types">
+                                <img class="imgwidth" src="{% static 'images/earring24.jpg' %}">
+                                <div class="desc">Gold earrings RS:521245 <br>
+                                    <button id="btn">Buy now</button>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </section>
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <div>
+
+            <table class="fttb">
+
+                <tr> </tr>
+                <tr></tr>
+
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr>
+                    <td>
+                        <h4>Earrings</h4>
+                        <p>
+                            Jewellery and ornaments are either worn to bring out your internal beauty or to
+                            show
+                            your love and
+                            commitment for your loved one. India is a country where ornaments have special
+                            value and
+                            almost
+                            everyone buys jewellery. Traditional Indian woman has been portrayed to be
+                            wearing all
+                            sorts of
+                            jewellery and loaded with Gold / Diamond jewellery and their beauty is at
+                            another level
+                            altogether.
+                            A beautiful woman becomes more adorable when she wears a set of stunning
+                            earrings. It is
+                            generally
+                            observed that a woman who is more possessive about the style and fashion, tends
+                            to steal
+                            the show.
+                            To increase the beauty of her an equally elegant ornament would be a perfect
+                            option
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Buy Earrings online with TANISHQ</h4>
+                        <p>
+                            Tanishq Jeweller.com offers you authenticate and latest designed earrings with
+                            the available
+                            options of over 4650 designs. Tanishq Jeweller has created an online store with
+                            the range
+                            that is carefully selected from leading jewellery brands in India and offers you
+                            a
+                            stunning range of beautiful earrings starting from Rs. 3908 Tanishq Jeweller’s
+                            collection of
+                            earring ranges from plain gold earrings, diamond earrings, gemstone earrings,
+                            silver
+                            earrings for various occasions like engagement, marriage, anniversary or for any
+                            special
+                            days. You can buy stunning earrings for yourself or for someone you love.
+                            Moreover we
+                            offer Lifetime Exchange and 100% Refund options on wide range of Special
+                            Earrings. the
+                            beauty of her an equally elegant ornament would be a perfect option
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Diamond Earrings at Tanishq Jeweller.com</h4>
+                        <p>
+                            Diamonds are appreciated by everyone and Diamond Earrings are no different. Once
+                            you
+                            view through entire range of Diamond Earrings at Tanishq Jeweller, we are sure
+                            you will find
+                            an occasion to celebrate in a very romantic way. Enchanting Diamond Earrings
+                            define your
+                            style quotient and also your level of commitment and love for someone you love
+                            and
+                            admire.
+
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Gold Earrings at Tanishq Jeweller.com</h6>
+                        <p>
+                            Gold is not merely metal for Indians; it is a combination of love, tradition,
+                            identity and pride. Gold ornaments and specially Gold Earrings are a very
+                            emotional but very pure way to show your love and affection. All your worries
+                            finding a gorgeous, matching and stunning Gold Earring would find a perfect
+                            match at Tanishq Jeweller. We serve you with an exclusive range of Elegant Plain
+                            Gold Earrings, Diamond Studded Gold Earrings, Everyday Gold Earrings or Special
+                            Occasion Gold Earrings and all these would surely steal your heart. At our
+                            Online Store, you will find over 500 designs of Gold Earrings with range
+                            starting from Rs. 3908. Be it your wedding or you are attending a wedding, if
+                            you want to grab the attention and steal the show, Tanishq Jeweller is a perfect
+                            online store. Just dive in and browse through the range of beautiful gold
+                            earrings.
+
+
+
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Silver Earrings at Tanishq Jeweller.com</h4>
+                        <p>
+                            Silver is considered to be an auspicious metal and what to say about it when it
+                            is in the form of ornaments? On most of the days, you would not hesitate even
+                            for a single time while buying something special for yourself. We at Tanishq
+                            Jeweller bring you a range of selected Silver Earring
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Gemstone Earrings at Tanishq Jeweller.com</h4>
+                        <p>
+                            Gemstones are precious crystals and minerals that have metaphysical symbolism,
+                            healing properties and powers, and spiritual meaning. That is the main reason
+                            why gemstones are classy and popular more than most of the other metals. Tanishq
+                            Jeweller is a best platform for buying gemstone earrings online. Visit our
+                            online store and witness the collection of elegantly designed and selected range
+                            of Gemstone Earrings As a buyer you be rest assured about the authenticity of
+                            the Gemstones studded in Earrings at Tanishq Jeweller. All the Gemstone Earrings
+                            here are trusted and certified. At Tanishq Jeweller you may also get options of
+                            Free Shipping for buying the gemstone earrings.
+                        </p>
+                    </td>
+                </tr>
+
+
+
+
+            </table>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
