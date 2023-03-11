@@ -1,4 +1,9 @@
-
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width:100%;
+    margin: auto;
+    height: auto;
+  }
 #alllabel:hover{
    width: 120px;
    color: rgb(242, 14, 44);
@@ -18,3 +23,18 @@
    height: 200px;
 
 }
+/* .containerdiv{
+   color:rgb(242, 14, 44);
+} */
+
+.imgrnd1, .imgrng2{
+   align-content: center;
+}
+.imgrnd{
+   align-items: center;
+}
+/* #btn:hover {
+   background-color: rgb(5, 5, 69);
+   color: aliceblue;
+
+} */

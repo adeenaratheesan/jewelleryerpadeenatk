@@ -1,211 +1,165 @@
-{% load static %}
+{%load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    
     <style>
-        .label{
-            color: white;
-        }
-        .lbdiv{
-            padding: 60px;
-        }
-        .btn{
-            
-            background-color: rgb(244, 223, 223);
-            
-        padding: 10px;
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: #f093fb;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
         }
     </style>
-</head>
-<body>
-    <div class="hero">
-        <!-- <img src="{% static 'images/background.jpg' %}" > -->
-        <div class="form-box">
-           
-            <div class="button-box">
-                <div id="btn"></div>
-                <button type="button" class="toggle-btn">Log in</button>
-                <!-- <button type="button" class="toggle-btn">Register</button> -->
-                
-            </div>
-            <div  class="lbdiv"><table>
-                <tr><td>
-                    <label class="label" >Username</label><input type="text"></td>
-                </tr>
-                <tr>
-                <td>
-                    <label  class="label" >Password</label><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="btn">Login</button>
-                    </td>
-                </tr>
-            </table>
-            
-                
-               
-            </div>
-        </div>
-        <!-- <div class="social-icons">
-            <ul>
-                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
-              </ul>
-        </div> -->
-    </div>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="{% static 'css/logincss.css' %}">
     <style>
-        /* .main_div{
-            width: 100%;
-            height:100%
-        } */
-        .loginform {
-            width: 40%;
-            /* margin-top:200px;
-            margin-left:200px;
-            margin-bottom:200px;
-            margin-right:200px; */
-            align-items: center;
-            background-color: rgb(195, 200, 212);
-            color: red;
-            font-size: xx-large;
+        .login_card {
+            padding: 100px;
+            display: grid;
+            justify-content: center;
+        }
+
+        .login_card h2 {
+            /* color: rgb(106, 0, 255); */
             text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
+        .form {
+            background-color: rgba(156, 203, 227, 0.335);
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
 
         }
 
-        .userpassword1 {
-            width: 600px;
-
-            background-color: antiquewhite;
-            color: rgb(100, 33, 234);
-            font-family: 'Courier New', Courier, monospace;
-            font-size: medium;
+        .form input {
+            margin: 5px;
+            border: none;
+            width: 100%;
         }
-        
-        img {
-        max-width: 100%;
-        height: auto;
 
+        form button:hover {
+            margin: 5px;
+            width: 75%;
+            border: none;
 
-                }
+            text-decoration: none;
+            background-color: rgb(5, 5, 69);
+            color: aliceblue;
+
+        }
+
+        /* .form{
+
+            opacity: 50%;
+        } */
     </style>
 </head>
 
 <body>
-    <div class="main_div">
 
-        <form action="">
-            <div class="loginform">
-                <table width="100%",cellpadding="20">
-                    LOGIN
-                    <tr align="center">
-                        <td >
-                            Username: <input type="text" placeholder="">
-                        </td>
-                    </tr>
-                    <tr align="center">
-                        <td>
-                            Password: <input type="text" placeholder="">
-                        </td>
-                    </tr>
-                    <tr align="center">
-                        <td>
-                            <input type="button" name="btn_login" value="Login">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Forgot <a href="#">password?</a>
-                        </td>
-                    </tr>
-                </table>
-            </div>  
-            <table >
-                <tr>
-                     <td >
-                         
-                        <img src="{% static 'images/tani.png' %}" alt="Cinque Terre" ></td>
-                 </tr>
-             </table>   
-               
-        </form>
-    </div>
+
+    <!--Main Navigation-->
+    <header>
+        <style>
+            .carousel-inner,
+            .carousel-item.active {
+                height: 100vh;
+            }
+
+            .carousel-item:nth-child(1) {
+                background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
+        </style>
+
+
+        <!-- Inner -->
+        <div class="carousel-inner">
+            <!-- Single item -->
+            <div class="carousel-item active">
+                <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-white text-center">
+                            <br>
+                            <h1 class="mb-3">Login</h1>
+                            <br><br>
+                            <div class="container-fluid">
+                                <div class="row text-center">
+                                    <div class="col-10 offset-1">
+                                        <!-- <a href="{% url 'home:sellerlogin' %}"><input id="btn" type="submit" value="Login"></a>
+                                        <a href="{% url 'home:customerlogin' %}"><input id="btn" type="submit" value="Login"></a -->
+                                            <a href="{% url 'home:sellerlogin' %}">   <button class="btn btn-primary ">Seller Login</button></a>
+                                            <a href="{% url 'home:customerlogin' %}">   <button class="btn btn-primary ">Customer Login</button></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
+                            role="button" rel="nofollow" target="_blank">Start tutorial</a>
+                            <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
+                             target="_blank" role="button">Download MDB UI KIT</a> -->
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="login_card">
+
+                    <section class="vh-100 gradient-custom">
+
+                        <div class="form">
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td><input type="text" placeholder="Enter Your User ID" id="userid"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td> <input type="password" placeholder="Enter Password" id="password"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><button type="button" class="btn btn-success">Submit</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><span id="spn"></span></td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+
+
+    </header>
+
+
+
+
+    </section>
 </body>
 
-</html> -->
 
-
-
-
+</html>

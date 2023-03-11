@@ -1,0 +1,146 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+    <style>
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: #f093fb;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
+        }
+    </style>
+    <style>
+        .login_card {
+            padding: 100px;
+            display: grid;
+            justify-content: center;
+        }
+
+        .login_card h2 {
+            /* color: rgb(106, 0, 255); */
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .form {
+            background-color: rgba(156, 203, 227, 0.335);
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+
+        }
+
+        .form input {
+            margin: 5px;
+            border: none;
+            width: 100%;
+        }
+
+        form button:hover {
+            margin: 5px;
+            width: 75%;
+            /* border: none; */
+
+            /* text-decoration: none; */
+            background-color: rgb(5, 5, 69);
+            color: aliceblue;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!--Main Navigation-->
+    <header>
+        <style>
+            .carousel-inner,
+            .carousel-item.active {
+                height: 100vh;
+            }
+
+            .carousel-item:nth-child(1) {
+                background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
+        </style>
+
+
+        <!-- Inner -->
+        <div class="carousel-inner">
+            <!-- Single item -->
+            <div class="carousel-item active">
+                <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-white text-center">
+                            <br>
+                            <h1 class="mb-3">Customer Login</h1>
+                            <br><br>
+
+                            <!-- <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
+                            role="button" rel="nofollow" target="_blank">Start tutorial</a>
+                            <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
+                             target="_blank" role="button">Download MDB UI KIT</a> -->
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="login_card">
+
+                    <section class="vh-100 gradient-custom">
+
+                        <div class="form">
+                            <table>
+                                <tr>
+                                    <td><input type="text" placeholder="Enter Your User ID" id="userid" name="userid"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> <input type="password" placeholder="Enter Password" id="password" name="password"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> <td><button type="button" class="btn btn-success">Submit</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td><span id="spn"></span></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                </div>
+            </div>
+
+
+    </header>
+
+
+
+
+    </section>
+</body>
+
+
+</html>
