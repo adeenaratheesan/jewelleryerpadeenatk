@@ -32,7 +32,7 @@
                         <td align="left">
                             <img class="tanishqimg" src="{% static 'images/Tanishq.jpg' %}" ,width="1px" ,height="1px">
                         </td>
-                        <td colspan="2" align="center">
+                        <td  align="center">
                            
                                 <input type="text" id="fname" name="firstname" placeholder="Search....">
                            
@@ -40,17 +40,7 @@
                         <td><a href="{% url 'home:login' %}"><input id="btn" type="submit" value="Login"></a></td>
                         <td><a href="{% url 'home:cus_registration' %}"><input id="btn" type="submit" value="Registration"></a></td>
 
-                        <!-- <td>
-                        <div class="social_icone">
-                            <ul>
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </td> -->
+                       
                     </tr>
                 </table>
 
@@ -59,6 +49,7 @@
                     <table id="itemslabel" width="100%px">
 
                         <tr>
+                           
                             <td>
                                 <a href="{% url 'home:homepage' %}"> <label id="alllabel">ALL JEWELLERY</label></a>
 
@@ -67,9 +58,9 @@
 
                                 <a href="{% url 'home:earrings' %}"><label id="alllabel">EARRINGS</label></a>
                             </td>
-                            <td>
+                            <!-- <td>
                                 <a href="{% url 'home:rings' %}"><label id="alllabel">RINGS</label></a>
-                            </td>
+                            </td> -->
                             <td>
                                 <a href="{% url 'home:necklaces' %}"><label id="alllabel">NECKLACES</label></a>
                             </td>

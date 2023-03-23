@@ -1,0 +1,46 @@
+.pass_show{position: relative} 
+
+.pass_show .ptxt { 
+
+position: absolute; 
+
+top: 50%; 
+
+right: 10px; 
+
+z-index: 1; 
+
+color: #f36c01; 
+
+margin-top: -10px; 
+
+cursor: pointer; 
+
+transition: .3s ease all; 
+
+} 
+.hh{
+    text-align: center;
+    
+}
+
+.form-control{
+    display: flex;
+}
+.pass_show .ptxt:hover{color: #333333;} 
+.container{
+    padding: 10%;
+    background-color: rgb(240, 219, 188);
+    /* background-image: url("/static/image/rain.jpg");  */
+    background-repeat: initial;
+background-size: cover;
+    width: 1700px;
+   
+  
+}
+.form-group pass_show,.row,.col-sm-4{
+    padding: 5%;
+}
+/* .btnn:hover{
+color: red;
+} */

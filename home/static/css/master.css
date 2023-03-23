@@ -48,7 +48,7 @@ ul {
     display: flex;
     background-color: rgb(6, 28, 93);
     font-size: smaller;
-
+/* margin-left: 20px; */
     width: 100%;
     height: auto;
     flex-direction: row-reverse;
@@ -75,6 +75,7 @@ ul {
     flex-wrap: wrap;
     position: sticky;
     top: 0;
+    /* margin-left: 50px; */
     width: 120px;
     color: rgb(238, 236, 234);
     /* background-color: rgb(93, 93, 176); */
@@ -92,7 +93,7 @@ ul {
 }
 
 
-.ion-social-facebook:hover {
+/* .ion-social-facebook:hover {
     background-color: rgb(167, 170, 170);
 
 }
@@ -116,10 +117,10 @@ ul {
 .ion-social-youtube:hover {
     background-color: rgb(167, 170, 170);
 
-}
+} */
 
 .container {
-    background-color: rgb(211, 237, 240);
+    /* background-color: rgb(211, 237, 240); */
     display: grid;
 }
 

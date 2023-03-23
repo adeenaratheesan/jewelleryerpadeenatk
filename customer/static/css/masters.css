@@ -1,0 +1,295 @@
+
+.maindiv {
+
+    width: 100%;
+    height: auto;
+}
+#alllabel:hover{
+    width: 120px;
+    color: rgb(242, 14, 44);
+    /* background-color: rgb(93, 93, 176); */
+    border-radius: 3px;
+   
+ }
+#alllabel {
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    width: 120px;
+    color: rgb(238, 236, 234);
+    /* background-color: rgb(93, 93, 176); */
+    border-radius: 3px;
+    position: sticky;
+    /* width:100%;
+    height: auto; */
+
+}
+#mlabel:hover{
+    display:grid;
+    color: aliceblue;
+}
+#mlabel{
+    color:black;
+}
+
+.search {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#btn:hover {
+    background-color: rgb(5, 5, 69);
+    color: aliceblue;
+
+}
+
+ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.tanishqimg {
+    width: 50%;
+    height: auto;
+
+}
+
+.tablediv {
+    /* margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px; */
+    /* width: 100%;
+    height: 100px; */
+    background-color: rgb(169, 143, 235);
+    font-size: larger;
+    text-align: center;
+}
+
+.items {
+    display: flex;
+    background-color: rgb(6, 28, 93);
+    font-size: smaller;
+
+    width: 100%;
+    height: auto;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+
+
+}
+
+.items div {
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    background-color: burlywood;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+/* .ion-social-facebook:hover {
+    background-color: rgb(167, 170, 170);
+
+}
+
+.ion-social-twitter:hover {
+    background-color: rgb(167, 170, 170);
+
+
+}
+
+.ion-social-instagram:hover {
+    background-color: rgb(167, 170, 170);
+
+}
+
+.ion-social-linkedin:hover {
+    background-color: rgb(167, 170, 170);
+
+}
+
+.ion-social-youtube:hover {
+    background-color: rgb(167, 170, 170);
+
+} */
+
+.container {
+    background-color: rgb(211, 237, 240);
+    display: grid;
+}
+
+.container div {
+    padding: 10px;
+
+}
+
+.containerdiv {
+    background: none;
+}
+
+.br2 {
+    width: 100%;
+    height: auto;
+}
+
+.bkimg {
+    opacity: 10%;
+    width: 100%;
+    height: auto;
+}
+
+
+/* .h1 {
+    font: size 80%;
+    font-family: Luminari, fantasy;
+    text-align: center;
+
+
+} */
+
+/* .h3 {
+    text-align: center;
+}
+
+.h4 {
+    text-align: center;
+}
+
+.para {
+    text-align: center;
+}
+
+.imgrnd {
+    padding: 30px;
+
+
+}
+
+.imgrnd1 {
+    padding: 60px;
+    border-radius: 50%;
+    width: 250px;
+    height: 300px;
+    align-items: center;
+    object-position: 15% 100%;
+    cursor: pointer;
+}
+
+.imgrnd2 {
+    padding: 60px;
+    border-radius: 50%;
+    width: 350px;
+    height: 400px;
+    object-position: 15% 100%;
+    cursor: pointer;
+}
+
+.rndsec {
+    padding: 100px;
+    align-content: center;
+    object-position: 15% 100%;
+}
+
+.women {
+    width: 600px;
+    height: 600px;
+}
+
+.sqimg {
+    padding: 60px;
+    border-radius: 20%;
+    width: 500px;
+    height: auto;
+    object-position: 15% 100%;
+    cursor: pointer;
+} */
+
+.footerdiv {
+    width: 100%;
+    color: none;
+    background-color: rgb(169, 143, 235);
+}
+
+.footertlb {
+    width: 100%;
+    height: 100%;
+}
+
+.tanishqtlb{
+    height: 40px;
+}
+
+/* .btnshop:hover{
+       
+        background-color: black;
+        color: white;
+        border-radius: 12px;
+        
+        cursor: pointer;
+    }
+       
+    .btndiv{
+        align-content: center;
+    } */
+@media screen and (max-width: 500px) {
+
+    .maindiv,
+    .tablediv,
+    .social_icone,
+    .items,
+    .bodydiv,
+    .containerdiv,
+    .rndsec,
+    .imgrnd,
+    .behind,
+    .footerdiv,
+    /* .search, */
+    .tanishqtlb,
+    /* .tanishqimg, */
+    .itemslabel,
+    .women {
+        width:50%;
+
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    h1 {
+        font-size: 10;
+    }
+}
+h1:hover{
+    font-weight: 100;
+}
+h4:hover{
+    font-weight: 100;
+}
+h3:hover{
+    font-weight: 100;
+}
+p:hover{
+    font-style: italic;
+}
+#btn:hover {
+    background-color: rgb(5, 5, 69);
+    color: aliceblue;
+
+}

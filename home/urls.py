@@ -15,6 +15,6 @@ urlpatterns=[
     path('master/',views.master,name='master'),
     path('cus_registration/',views.cus_registration,name='cus_registration'),
     path('sel_registration/',views.sel_registration,name='sel_registration'),
-    # path('master/',views.master,name='master'),
+    path('mia/',views.mia,name='mia'),
                   
 ]

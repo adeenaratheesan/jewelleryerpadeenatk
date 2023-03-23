@@ -2,7 +2,173 @@
 
 {% load static %}
 {% block content %}
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
 
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #f90000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .card button:hover {
+        opacity: 0.7;
+    }
+
+    #btn:hover {
+        background-color: rgb(5, 5, 69);
+        color: aliceblue;
+
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        grid-template-rows: auto auto auto;
+        grid-gap: 80px;
+    }
+
+    .container div {
+        padding: 10px;
+    }
+
+    .nec_types {
+        background: #02cac0;
+        width: 200px;
+        height: 300px;
+
+    }
+
+    div.nec_types:hover {
+        border: 1px solid #777;
+    }
+
+    div.nec_types {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+        border-left: 20px;
+        border-right: 20px;
+        border-top: 40px;
+        border-bottom: 20px;
+    }
+
+    .imgwidth {
+        width: 160px;
+        height: 180px;
+    }
+
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    #tlbcontainer {
+        align-content: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .containerclass {
+        padding: 40px;
+
+    }
+
+    .h1 {
+        color: #a50505;
+    }
+
+
+    /* .cardss {
+        padding: 20%;
+    }
+
+    #canbe {
+        width: 250px;
+    }
+    .first,.second {
+        padding: 20px;
+    } */
+
+
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial;
+    }
+
+    .header {
+        text-align: center;
+        padding: 32px;
+    }
+
+    .shop {
+        text-align: center;
+        color: #a50505;
+    }
+
+    .browse {
+        text-align: center;
+    }
+
+
+
+    .imgrnd1,
+    .imgrng2 {
+        align-content: center;
+    }
+
+    .imgrnd {
+        align-items: center;
+        margin-left: 225px;
+    }
+
+    .behind {
+        margin-left: 20px;
+    }
+
+    .inspired {
+        margin-left: 20px;
+    }
+
+    .cardimg {
+        width: 160px;
+        height: 180px;
+    }
+
+    .row {
+        padding: 5%;
+        margin-left: 75px;
+        margin-right: 20px;
+    }
+
+    /* .rowdiv{
+    margin-left: 70px;
+} */
+</style>
 <div class="bodydiv">
     <!-- <section class="container">
             <img class="br2" src="{% static 'images/br2.jpg' %}" height="auto" width="100%">
@@ -89,37 +255,107 @@
                 <div>
                 </div>
             </div>
-            <section class="rndsec" > 
-                <div class="imgrnd">
-                    <img class="imgrnd1" src="{% static 'images/rndimg4.jpg' %}">
-                    <img class="imgrnd2" src="{% static 'images/rndimg2.jpg' %}">
-                    <img class="imgrnd1" src="{% static 'images/rndimg3.jpg' %}">
-                    <!-- <div class="btndiv">
-                    <button class="btnshop">SHOP THE COLLECTIONS</button></div>
-                </div> -->
-            </section>
-            <div class="behind">
-                <table>
-                    <tr>
-                        <td>
-                            <h1>Behind the scenes of the carnival</h1>
-                            <p>Inspired by the magnificent rides and the larger-than-life dais of a carnival, this
-                                stunning collection of lustrous diamonds and coloured gemstones is a grand
-                                celebration of all things joyous in life. One that epitomizes vibrancy and opulence
-                                in all its glory.
 
+        </div>
+        <br>
+        <br>
+        <br>
 
-                            </p>
-                        </td>
-                        <td>
-                            <div class="women"> <img class="sqimg" src="{% static 'images/women1.jpg' %}"> </div>
-
-                        </td>
-                    </tr>
-                </table>
-            </div>
 
     </section>
+
+
+    <div>
+        <div id="shop">
+            <h1 class="shop">
+                <b> SHOP JEWELLERY BY CATEGORY</b>
+            </h1>
+        </div>
+        <div>
+            <h5 class="browse">
+                Browse through your favourite categories. We've got them all!
+            </h5>
+            <hr>
+        </div>
+        <div class="rowdiv">
+            <div class="row">
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body teacher-card">
+                            <img class="cardimg" src="{% static 'images/earring12.jpg' %}">
+                            <h3 class="card-title">Diamond</h3>
+                            <a href="{% url 'home:homepage' %}" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body teacher-card">
+                            <img class="cardimg" src="{% static 'images/earring16.jpg' %}">
+                            <h3 class="card-title">Antique</h3>
+                            <a href="{% url 'home:homepage' %}" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body teacher-card">
+                            <img class="cardimg" src="{% static 'images/neck4.jpg' %}">
+                            <h3 class="card-title">Diamond</h3>
+                            <a href="{% url 'home:homepage' %}" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body teacher-card">
+                            <img class="cardimg" src="{% static 'images/gg.jpg' %}">
+                            <h3 class="card-title">Gold</h3>
+                            <a href="{% url 'home:homepage' %}" class="btn btn-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+</div>
+<section class="rndsec">
+    <div class="imgrnd">
+        <img class="imgrnd1" src="{% static 'images/rndimg4.jpg' %}">
+        <img class="imgrnd2" src="{% static 'images/rndimg2.jpg' %}">
+        <img class="imgrnd1" src="{% static 'images/rndimg3.jpg' %}">
+    </div>
+</section>
+<div class="behind">
+    <table>
+        <tr>
+            <td>
+                <h1 class="behind">Behind the scenes of the carnival</h1>
+                <p class="inspired">Inspired by the magnificent rides and the larger-than-life dais of a carnival, this
+                    stunning collection of lustrous diamonds and coloured gemstones is a grand
+                    celebration of all things joyous in life. One that epitomizes vibrancy and opulence
+                    in all its glory.
+
+
+                </p>
+            </td>
+            <td>
+                <div class="women"> <img class="sqimg" src="{% static 'images/women1.jpg' %}"> </div>
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+</section>
 
 
 </div>

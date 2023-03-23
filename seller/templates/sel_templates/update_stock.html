@@ -1,0 +1,73 @@
+{% extends 'sel_templates/master.html' %}
+{% load static %}
+{% block content %}
+
+<div class="upd">
+    <div>
+        <h1 id="update">UPDATE STOCK</h1>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <div>
+                    <label for="">Image</label>
+                    <input type="file" id="myfile" name="ppimg">
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <label for="">Product Number</label>
+                    <input type="text" name="pnum" id="ppnum">
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <label for="">Product Name</label>
+                    <input type="text" name="pname" id="ppname">
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <label for="">Description</label>
+                    <input type="text" name="pdec" id="ppdec">
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <label for="">Current Stock</label>
+                    <input type="text" name="cstock" id="pcstock">
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <label for="">Update new stock</label>
+                    <input type="text" name="nstock" id="ppnstock">
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <label for="">Product price</label>
+                    <input type="text" name="pprice" id="pprice">
+                </div>
+            </tr>
+            <tr>
+                <div>
+                    <input type="submit" name="s_submit" value="submit">
+                </div>
+            </tr>
+        </table>
+    
+    
+    
+    
+    
+    </div>
+
+
+
+
+</div>
+
+
+
+{% endblock %}

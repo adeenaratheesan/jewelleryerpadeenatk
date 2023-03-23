@@ -1,0 +1,59 @@
+{% extends 'sel_templates/master.html' %}
+
+{% load static %}
+{% block content %}
+<style>
+    #ddiv{
+    padding-left:50px;
+    background-color: #c7c7c7;
+}
+</style>
+
+<div id="headd">
+    <h1 class="hh">CHANGE PASSWORD</h1>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-4">
+
+                <div id="ddiv">
+                    <label class="lbl">Current Password</label>
+                <div class="form-group_pass_show">
+                    <input type="password" value="" class="form-control" placeholder="Current Password">
+                </div>
+                <label>New Password</label>
+                <div class="form-group_pass_show">
+                    <input type="password" value="" class="form-control" placeholder="New Password">
+                </div>
+                <label>Confirm Password</label>
+                <div class="form-group_pass_show">
+                    <input type="password" value="" class="form-control" placeholder="Confirm Password">
+                </div>
+                <div>
+                    <a href="{% url 'customer:home' %}">
+                        <input id="btn" type="button" value="SUBMIT"></a>
+                        <a href="{% url 'customer:change_pass' %}">
+                        <input id="btn" type="button" value="CANCEL"></a>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- js code 
+$(document).ready(function(){
+    $('.pass_show').append('<span class="ptxt">Show</span>');  
+    });
+      
+    
+    $(document).on('click','.pass_show .ptxt', function(){ 
+    
+    $(this).text($(this).text() == "Show" ? "Hide" : "Show"); 
+    
+    $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; }); 
+    
+    });   -->
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'sel_templates/master.html' %}
+{% load static %}
+{% block content %}
+<style>
+.ttb{
+    padding:50px;
+}
+</style>
+<div>
+    <h1 class="hadd">ADD PRODUCT</h1>
+</div>
+<div class="ttb">
+    <table class="tb">
+
+        <tr>
+            <td><label for="">Product Name</label></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="" name="s_pname"></td>
+        </tr>
+        <tr>
+            <td><label for="">Product number</label></td>
+
+        </tr>
+        <tr>
+            <td><input type="text" name="s_pid"></td>
+        <tr>
+            <td><label for="">Description</label></td>
+        </tr>
+        <tr>
+            <td><textarea name="s_desc" id="" cols="30" rows="10"></textarea></td>
+        </tr>
+
+        <tr>
+            <td><label for="">Product Stock</label></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="" name="s_pstock"></td>
+        </tr>
+
+
+        <tr>
+            <td><label for="">Product price</label></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="s_pprice"></td>
+        </tr>
+        <tr>
+            <td><label for="myfile">Product image</label>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="file" id="myfile" name="s_pimg"><br><br></td>
+        </tr>
+        <tr>
+
+            <td><input type="submit" name="s_submit" value="submit"></td>
+        </tr>
+
+
+    </table>
+</div>
+
+{% endblock %}

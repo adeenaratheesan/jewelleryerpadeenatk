@@ -1,13 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>home</title>
-</head>
-<body>
-    home page
-</body>
-</html>
+{% extends 'cus_templates/master.html' %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+
+<div class="--Mainnew">
+    <h1 id="h1">NEW FOR YOU!</h1>
+    <h5 id="para1">Our latest releases,just for you!!</h5>
+    <hr id="hr">
+</div>
+
+<div class="main1">
+    <div>
+        <img class="monsoon" src="{% static 'image/monsoon_Banner.jpg' %}" ">
+    </div>
+    <div class=" behind">
+        <table class="pinktb">
+            <tr>
+                <td>
+                    <div class="women"> <img src="{% static 'image/ele.jpg' %}" width="700px" height="500px"> </div>
+
+
+                    </p>
+                </td>
+                <td>
+                    <div class="women"> <img class="sqimg" src="{% static 'image/elegance2.jpg' %}" width="750px"
+                            height="700px"> </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="symptoms"> <img src="{% static 'image/symptoms.jpg' %}"></div>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+                <table>
+
+                    <tr>
+                        <td> <img id="imgbdr" src="{% static 'image/monsoon_sparkles1.jpg' %}" width="98%"
+                                height="auto">
+                        </td>
+                        <td>
+                            <img src="{% static 'image/monsoon_sparkles2.jpg' %}" width="98%" height="auto">
+                        </td>
+                        <td>
+                            <img src="{% static 'image/monsoon_sparkles3.jpg' %}" width="98%" height="auto">
+                        </td>
+                    </tr>
+                </table>                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+            <div class="item">
+                <table>
+
+                    <tr>
+                        <td> <img id="imgbdr" src="{% static 'image/monsoon_sparkles4.jpg' %}" width="98%"
+                                height="auto">
+                        </td>
+                        <td>
+                            <img src="{% static 'image/monsoon_sparkles5.jpg' %}" width="98%" height="auto">
+                        </td>
+                        <td>
+                            <img src="{% static 'image/monsoon_sparkles6.jpg' %}" width="98%" height="auto">
+                        </td>
+                    </tr>
+                </table>
+                <div class="carousel-caption">
+
+                </div>
+            </div>
+
+            <div class="item">
+                <table>
+
+                    <tr>
+                        <td> <img id="imgbdr" src="{% static 'image/monsoon_sparkles7.jpg' %}" width="98%"
+                                height="auto">
+                        </td>
+                        <td>
+                            <img src="{% static 'image/monsoon_sparkles8.jpg' %}" width="98%" height="auto">
+                        </td>
+                        <td>
+                            <img src="{% static 'image/monsoon_sparkles9.jpg' %}" width="98%" height="auto">
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+            <!-- <img class="sqimg" src="{% static 'images/women1.jpg' %}">  -->
+            
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <br><br>
+    <div>
+        <img src="{% static 'image/monsoon_banner2.jpg' %}" width="100%" height="auto">
+
+    </div>
+
+
+</div>
+
+{% include 'home_templates/footer.html' %}
+
+
+{% endblock %}

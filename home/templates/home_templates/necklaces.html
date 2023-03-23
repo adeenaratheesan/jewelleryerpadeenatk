@@ -1,15 +1,7 @@
+{% extends 'home_templates/master.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Necklaces</title>
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-    <link rel="stylesheet" href="{% static 'css/earrings.css' %}">
+{% block content %}
     <style>
         .maindiv {
             width: 100%;
@@ -24,11 +16,7 @@
             resize: vertical;
         }
 
-        #btn:hover {
-            background-color: rgb(5, 5, 69);
-            color: aliceblue;
-
-        }
+        
 
         ul {
             list-style: outside none none;
@@ -80,6 +68,11 @@
             width: 75%;
             margin-top: 6px;
         }
+        #btn:hover {
+            background-color: rgb(5, 5, 69);
+            color: aliceblue;
+
+        }
 
         .container {
             display: grid;
@@ -115,7 +108,7 @@
         }
 
         .imgwidth {
-            width: 180px;
+            width: 160px;
             height: 180px;
         }
 
@@ -135,7 +128,7 @@
             padding: 40px;
 
         }
-
+/* 
         .ion-social-facebook:hover {
             background-color: rgb(167, 170, 170);
 
@@ -160,7 +153,7 @@
         .ion-social-youtube:hover {
             background-color: rgb(167, 170, 170);
 
-        }
+        } */
 
         .footerdiv {
             width: 100%;
@@ -177,75 +170,9 @@
             color: blueviolet;
         }
     </style>
-</head>
-
-<body>
-
-    <div class="maindiv">
-        <div class="tablediv">
-
-            <table width="100%">
-                <tr>
-                    <td align="left">
-                        <img class="tanishqimg" src="{% static 'images/Tanishq.jpg' %}" ,width="5px" ,height="5px">
-                    </td>
-                    <td colspan="3" align="center">
-                        <div class="search">
-                            <input type="text" id="fname" name="firstname" placeholder="Search....">
-                        </div>
-                    </td>
-                    <td><a href="{% url 'home:login' %}">Login</a></td>
-                    <td>
-                        <div class="social_icone">
-                            <ul>
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-            </table>
 
 
-            <div class="items">
-                <table id="itemslabel" width="100%px">
 
-                    <tr>
-                        <td>
-                            <a href="{% url 'home:homepage' %}"> <label id="alllabel">ALL JEWELLERY</label></a>
-
-                        </td>
-                        <td>
-
-                            <a href="{% url 'home:earrings' %}"><label id="alllabel">EARRINGS</label></a>
-                        </td>
-                        <td>
-                            <a href="{% url 'home:rings' %}"><label id="alllabel">RINGS</label></a>
-                        </td>
-                        <td>
-                            <a href="{% url 'home:necklaces' %}"><label id="alllabel">NECKLACES</label></a>
-                        </td>
-                        <td>
-                            <a href="#"><label id="alllabel">GOLD</label></a>
-                        </td>
-                        <td>
-                            <a href="#"> <label id="alllabel">DIAMOND</label></a>
-                        </td>
-                        <td>
-                            <a href="#"><label id="alllabel">MIA</label></a>
-                        </td>
-                        <td>
-                            <a href="#"><label id="alllabel">COLLECTIONS</label></a>
-                        </td>
-
-                    </tr>
-                </table>
-
-            </div>
-        </div>
         <div class="containerclass">
             <section class="container">
                 <table id="tlbcontainer">
@@ -515,53 +442,5 @@
        
 
     </div>
-    <footer>
-        <div class="footerdiv">
-            <table class="footertlb">
-                <tr>
-                    <td>
-                        Useful Links
-                    </td>
-                    <td>
-                        Information
-                    </td>
-                    <td>Contact Us</td>
-                </tr>
-                <tr>
-                    <td><a href="#">Delivery Information</a></td>
-                    <td><a href="#">Careers</a></td>
-                    <td><a href="#"> Write to Us</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">International Shipping</a></td>
-                    <td><a href="">Blog</a></td>
-                    <td><a href="">1800-123-1234</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Payment Options</a></td>
-                    <td><a href="#">Offers & Contest Details</a></td>
-                    <td><a href="#">Chat with Us</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Track Your Order</a></td>
-                    <td><a href="#">Help & FAQS</a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Returns</a></td>
-                    <td><a href="#">About Tanishq</a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="#">Find a Store</a></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-    </footer>
-</body>
-
-</body>
-
-</html>
+    {% include 'home_templates/footer.html' %}
+{% endblock %}

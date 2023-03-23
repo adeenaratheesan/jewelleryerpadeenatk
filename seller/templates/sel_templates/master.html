@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANISHQ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- <link rel="stylesheet" href="{% static 'css/earrings.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/masters.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/change_pass.css' %}">
+    <link rel="stylesheet" href="{% static 'css/order_his.css' %}">
+    <link rel="stylesheet" href="{% static 'css/update_stock.css' %}">
+
+    
+
+</head>
+
+<body>
+    <header>
+
+
+        <div class="maindiv">
+            <div class="tablediv">
+
+                <table width="100%">
+                    <tr>
+                        <td align="left">
+                            <img class="tanishqimg" src="{% static 'images/Tanishq.jpg' %}" ,width="1px" ,height="1px">
+                        </td>
+                        <td colspan="2" align="center">
+                           
+                                <input type="text" id="fname" name="firstname" placeholder="Search....">
+                           
+                        </td>
+                        <td><a href="{% url 'seller:home' %}"><label id="mlabel">Home</label></a></td>
+                        <td><a href="{% url 'seller:add_product' %}"><label id="mlabel">Add <br> product</label></a></td>
+                        <td><a href="{% url 'seller:change_pass' %}"><label id="mlabel">Change <br> password</label></a></td>
+                        
+                        <td><a href="{% url 'seller:order_his' %}"><label id="mlabel">Order <br> history</label></a></td>
+                        <td><a href="{% url 'seller:product_catelogue' %}"><label id="mlabel">Product <br> catelogue</label></a></td>
+                        <td><a href="{% url 'seller:recent_orders' %}"><label id="mlabel">Recent <br> orders</label></a></td>
+                        <td><a href="{% url 'seller:update_stock' %}"><label id="mlabel">Update <br> stock</label></a></td>
+                        <td><a href="{% url 'home:homepage' %}"><label id="mlabel">Logout</label></a></td>
+                       
+                       
+                    </tr>
+                </table>
+
+
+                <div class="items">
+                    <table id="itemslabel" width="100%px">
+
+                        <tr>
+                            <td>---------</td>
+                            <td>
+                                <a href="{% url 'home:homepage' %}"> <label id="alllabel">ALL JEWELLERY</label></a>
+
+                            </td>
+                            <td>
+
+                                <a href="{% url 'home:earrings' %}"><label id="alllabel">EARRINGS</label></a>
+                            </td>
+                            <!-- <td>
+                                <a href="{% url 'home:rings' %}"><label id="alllabel">RINGS</label></a>
+                            </td> -->
+                            <td>
+                                <a href="{% url 'home:necklaces' %}"><label id="alllabel">NECKLACES</label></a>
+                            </td>
+                            <td>
+                                <a href="#"><label id="alllabel">GOLD</label></a>
+                            </td>
+                            <td>
+                                <a href="#"> <label id="alllabel">DIAMOND</label></a>
+                            </td>
+                            <td>
+                                <a href="#"><label id="alllabel">MIA</label></a>
+                            </td>
+                            <td>
+                                <a href="#"><label id="alllabel">COLLECTIONS</label></a>
+                            </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+
+
+
+
+</body>
+
+</html>

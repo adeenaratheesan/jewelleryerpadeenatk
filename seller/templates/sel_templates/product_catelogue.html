@@ -1,0 +1,46 @@
+{% extends 'sel_templates/master.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .container{
+        width: 100px;
+        height: 200px;
+
+    }
+    .card-img-top{
+        width: 70px;
+        height: 70px;
+
+    }
+    .product{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+</style>
+</head>
+
+<body>
+<form action="" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <div class="seller">
+            <h1>PRODUCT CATELOGUE</h1>
+        </div>
+        <div class="product">
+            {% for product in data %}
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{product.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product_details.product_name}}</h5>
+                <p class="card-text">{{product.Product_price}}</p>
+                <p class="card-text">{{product.description}}</p>
+                <input type="button" value="update stock"><a href="#" class="btn btn-primary"></a>
+            </div>
+        </div>
+        
+            {% endfor %}
+        </div>
+        
+    </div>
+</form>
+{% endblock%}

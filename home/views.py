@@ -6,6 +6,10 @@ from django.http import HttpResponse
 def homepage(request):
     return render(request,'home_templates/homepage.html')
 
+def mia(request):
+    return render(request,'home_templates/mia.html')
+
+
 def login(request):
     return render(request,'home_templates/login.html')
 

@@ -15,7 +15,69 @@
     <link rel="stylesheet" href="{% static 'css/sellerlogin.css' %}">
 
     <style>
-        
+        body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("img_nature.jpg");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+#sel{
+    color: beige;
+}
     </style>
 </head>
 
@@ -35,7 +97,7 @@
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <div class="text-white text-center">
                             <br>
-                            <h1 class="mb-3">Seller Login</h1>
+                            <h1 class="mb-3" id="sel">Seller Login</h1>
                             <br><br>
 
                             <!-- <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
@@ -47,31 +109,19 @@
 
                     </div>
                 </div>
-                <div class="login_card">
-
-                    <section class="vh-100 gradient-custom">
-
-                        <div class="form">
-                            <table>
-                                <tr>
-                                    <td><input type="text" placeholder="Enter Your User ID" id="userid" name="userid"></td>
-                                </tr>
-
-                                <tr>
-                                    <td> <input type="password" placeholder="Enter Password" id="password" name="password"></td>
-                                </tr>
-
-                                <tr>
-                                    <td> <td><button type="button" class="btn btn-success">Submit</button></td>
-                                </tr>
-
-                                <tr>
-                                    <td><span id="spn"></span></td>
-                                </tr>
-                            </table>
-
-                        </div>
-                </div>
+                <div class="bg-img">
+                    <form action="" class="container">
+                      <h1>Login</h1>
+                  
+                      <label for="email"><b>Email</b></label>
+                      <input type="text" placeholder="Enter Email" name="email" required>
+                  
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                  
+                      <button type="submit" class="btn">Login</button>
+                    </form>
+                  </div>
             </div>
 
 

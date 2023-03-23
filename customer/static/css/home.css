@@ -1,0 +1,70 @@
+#h1{
+    color: rgb(199, 53, 12);
+    font-style: oblique;
+    font-weight: 600;
+    text-align: center;
+}
+
+#para1{
+    text-align: center; 
+    font-weight: 500;  
+}
+#hr{
+    color: rgb(243, 5, 5);
+    display: flex;
+    display: block;
+}
+.monsoon{
+    height: 100%;
+    width: 1470px;
+}
+.pinktb{
+    /* background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');  */
+    width: 100%;
+    height: 800px;
+   
+}
+.elegance{
+    padding: 20px;
+    font-family: cursive;
+}
+.para2{
+    padding: 20px;
+    font-size: medium;
+    font-style: italic;
+    color: brown;
+
+}
+
+.main1{
+    background-color: rgb(193, 227, 237);
+}
+.main2{
+    background-color: blue;
+}
+
+
+
+.behind{
+    width:100%
+}
+
+.symptoms{
+    width:60%; 
+    height:auto;
+    align-content: center;
+    padding: 5%;
+}
+.fdiv1{
+    color: rgb(248, 234, 213);
+}
+.fdiv2{
+    color: aliceblue;
+    padding: 20px;
+
+}
+.footerdiv{
+    padding: 5%;
+}
+
+    

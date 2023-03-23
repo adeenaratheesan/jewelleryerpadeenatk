@@ -1,0 +1,87 @@
+{% extends 'sel_templates/master.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+   #welh{
+        text-align: center;
+    }
+    input.right {
+        float: right;
+      }
+      .right:hover{
+
+        display: flex;
+        color: red;
+        background-color: black;
+      }
+</style>
+
+<form action="">
+
+    <div><h1 id="welh">WELCOME</h1 id="welh"></div>
+       
+    <div class="container">
+        <div>
+          
+           <a href="{% url 'seller:edit_profile' %}"> <input type="button" value="Edit Profile" class="right"></a>
+        </div>
+        <div class="img">
+            <label for="">Image</label>
+        </div>
+        <div class="container-name">
+            <label for="">Name</label>
+            <span>type name</span>
+        </div>
+        <div class="Company_name">
+            <label for="">Company name</label>
+            <span>type Company_name</span>
+        </div>
+        <div>
+            <label for="">Address</label>
+        </div>
+        <div>
+            <label for="">Phone</label>
+        </div><div>
+            <label for="">E-mail</label>
+        </div>
+    <div>
+        <label for="">Bank Name</label>
+    </div>
+    <div>
+        <label for="">Account holder name</label>
+    </div>
+        <div>
+            <label for="">Account number</label>
+        </div>
+        <div>
+            <label for="">IFSC</label>
+        </div>
+        <div>
+            <label for="">Branch</label>
+        </div>
+       
+    <div>
+        <label for="">Username</label>
+    </div>
+    </div>
+</form>
+<!-- {% endblock %} <form action=""method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <tr>
+        <h1>SELLER PROFILE</h1>
+        name :
+        <h1>{{data.seller_name}}</h1>
+        image :
+        <img src="{{data.company_logo.url}}" alt="">
+        <br>
+        company name:{{data.company_name}}<br>
+        account number:{{data.s_acc_no}}<br>
+
+        IFSC CODE:{{data.ifsc}}<br>
+        BRANCH:{{data.s_branch_name}}<br>
+        ACCOUNT HOLDER NAME:{{data.acc_name}}<br>
+        PHONE NUMBER:{{data.mobile}} <br>
+        E-MAIL:{{data.e_mail}} <br>
+        ADDRESS:{{data.address}} <br>
+        USERNAME:{{data.Username}} <br> -->
