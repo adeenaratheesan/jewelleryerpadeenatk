@@ -24,8 +24,7 @@
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
         }
-    </style>
-    <style>
+
         .login_card {
             padding: 100px;
             display: grid;
@@ -63,86 +62,252 @@
             color: aliceblue;
 
         }
+
+        .imgwidth {
+            width: 10px;
+            height: 200px;
+        }
+
+        .vh-100 {
+            background-color: #9A616D;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-inner,
+        .carousel-item.active {
+            height: 100vh;
+        }
+
+        .carousel-item:nth-child(1) {
+            /* background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #cus {
+            color: beige;
+        }
+
+        #cardbd {
+            margin-left: 150px;
+            padding-left: 150px;
+        }
+
+        #forgot {
+            color: rgb(9, 9, 9);
+        }
+        /* input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+} */
+input[type=submit] {
+  background-color: #56625c;
+  color: white;
+}#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+
     </style>
+
 </head>
 
 <body>
 
+<!-- <script>
+    var myInput = document.getElementById("password");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
 
-    <!--Main Navigation-->
-    <header>
-        <style>
-            .carousel-inner,
-            .carousel-item.active {
-                height: 100vh;
-            }
-
-            .carousel-item:nth-child(1) {
-                background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center center;
-            }
-            #cus{
-    color: beige;
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
 }
-        </style>
 
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
 
-        <!-- Inner -->
-        <div class="carousel-inner">
-            <!-- Single item -->
-            <div class="carousel-item active">
-                <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <div class="text-white text-center">
-                            <br>
-                            <h1 class="mb-3"id="cus">Customer Login</h1>
-                            <br><br>
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
 
-                            <!-- <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
-                            role="button" rel="nofollow" target="_blank">Start tutorial</a>
-                            <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/"
-                             target="_blank" role="button">Download MDB UI KIT</a> -->
-                        </div>
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+  
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+
+</script> -->
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white text-center">
+                        <br>
+                        <h1 class="mb-3" id="cus">Customer Login</h1>
+                        <br><br>
 
 
                     </div>
-                </div>
-                <div class="login_card">
 
-                    <section class="vh-100 gradient-custom">
 
-                        <div class="form">
-                            <table>
-                                <tr>
-                                    <td><input type="text" placeholder="Enter Your User ID" id="userid" name="userid"></td>
-                                </tr>
-
-                                <tr>
-                                    <td> <input type="password" placeholder="Enter Password" id="password" name="password"></td>
-                                </tr>
-
-                                <tr>
-                                    <td> <td><button type="button" class="btn btn-success">Submit</button></td>
-                                </tr>
-
-                                <tr>
-                                    <td><span id="spn"></span></td>
-                                </tr>
-                            </table>
-
-                        </div>
                 </div>
             </div>
 
 
-    </header>
+
+
+            <section class="vh-100">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col col-xl-10">
+                            <div class="card" style="border-radius: 1rem;">
+                                <div class="row g-0">
+                                    <!-- <div class="col-md-6 col-lg-5 d-none d-md-block">
+                                <img id="imgwidth" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                              </div> -->
+                                    <div class="col-md-6 col-lg-7 d-flex align-items-center" id="cardbd">
+                                        <div class="card-body p-4 p-lg-5 text-black">
+                                            <form action=""method="POST" enctype="multipart/form-data">
+                                                {% csrf_token %} 
+                                                <br><br><br><br>
+
+                                                <h2 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h2>
+                                                <br><br>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label" for="form2Example17">Email address</label>
+                                                    <input type="email" id="form2Example17" name="email"
+                                                        class="form-control form-control-lg" require />
+
+                                                </div>
+
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label" for="form2Example27">Password</label>
+
+                                                    <input type="password" id="password" class="form-control form-control-lg" name="password" required/>
+                                               
+                                               
+                                                    <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" -->
+                                                  </div><br>
+
+                                                <div class="pt-1 mb-4">
+                                                    <!-- <button class="btn btn-dark btn-lg btn-block"
+                                                            type="button">Login</button> -->
+
+                                                    <a href="{% url 'customer:home' %}"><input id="btn" type="submit" value="Login" class="btn btn-dark btn-lg btn-block"></a>
+                                                    <!-- <a href="{% url 'customer:home' %}"><input type="submit" class="btn btn-dark btn-lg btn-block" name="" id=""value="LOGIN"></a>      -->
+                                                </div>
+
+                                                <a class="small text-muted" id="forgot"href="{% url 'customer:change_pass' %}">
+                                                    <h6><b>Forgot password?</b></h6>
+                                                </a>
+                                                <p class="mb-5 pb-lg-2" style="color: #080808;">Don't have an account? <a href="{% url 'home:cus_registration' %}"
+                                                        style="color: #040404;">Register here</a>
+                                                </p>
+                                                <!-- <a href="#!" class="small text-muted"style="color: #080808;"></a>Terms of use.</a>
+                                                    <a href="#!" class="small text-muted" style="color: #080808;"></a>Privacy policy</a> -->
+                                                    {{msg}}
+                                                     <!-- <div id="message">
+                                                    <h3>Password must contain the following:</h3>
+                                                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                                                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                                    <p id="number" class="invalid">A <b>number</b></p>
+                                                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                                                  </div> -->
+                                                </form>
+                                               
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
 
 
 
 
-    </section>
+        </section>
 </body>
 
 

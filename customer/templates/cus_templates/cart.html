@@ -3,10 +3,8 @@
 {% load static %}
 {% block content %}
 
-<div class="header">
-    <h1 class="cart">CART</h1>
-</div>
-<div class="content">
+
+<!-- <div class="content">
     <table class="table">
         <thead>
             <tr>
@@ -21,7 +19,75 @@
         </thead>
     </table>
 </div>
+ -->
+
+ <style>
+    .table {
+        border: 2px solid rgb(175, 164, 164);
+        border-radius: 10%;
+    }
+
+    .content {
+        padding: 50px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+</head>
+
+<body>
+<div class="header">
+    <h1 class="cart">CART</h1>
+</div>
+<div class="content">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">slno.</th>
+                <th scope="col">Product Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for Mycart in data %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>
+                    <div class="prod_img">
+                        <img src="{{Mycart.product.p_image.url}}" alt="">
+                </td>
+</div>
+<td>
+    {{Mycart.product.p_name}}
+</td>
+<td>{{Mycart.product.p_price}}</td>
+<td>
+    {{Mycart.quantity}}
+</td>
+<td>
+    {{Mycart.total}}
+</td>
+<td>
+
+    <a href="{% url 'customer:delete_item' Mycart.id %}"><button>Remove</button></a>
 
 
+</td>
+</tr>
+
+<!-- {{grandtotal}} -->
+{% endfor %}
+<tr>
+    <td> <span>grand total:{{grandtotal}}</span></td>
+</tr>
+</tbody>
+</table>
+</div>
 
 {% endblock %}

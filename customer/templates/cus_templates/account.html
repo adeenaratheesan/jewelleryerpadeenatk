@@ -2,63 +2,142 @@
 
 {% load static %}
 {% block content %}
+<style>
+    .immwidth {
+        /* margin-left: 1px; */
+        margin-right: 25px;
+    }
+
+    .tabb {
+        padding: 20px;
+        margin-left: 35px;
+
+    }
+
+    #crd {
+        margin-left: 500px;
+    }
+
+    tr {
+        padding: 15px;
+    }
+
+    .containerdiv {
+        width: 1465px;
+        height: 600px;
+        background-color: rgb(53, 7, 74);
+    }
+
+    #edit {
+        margin-left: 150px;
+    }
+    .img-circle{
+        margin-left: 50px;
+    }
+
+    /* .img{
+         background-image: url('static/image/ele.jpg');
+    } */
+</style>
 <!-- <link rel="stylesheet" href="{% static 'css/account.css' %}"> -->
 
-<form action="">
-    <!-- <div class="acmain">
-        <div class="acmain2">
-            <div><a href="{% url 'customer:editprofile' %}"> <input type="button" value="Edit Profile"></a>  <div>
-                
-                <br>
-                <div><h1 class="wel">WELCOME</h1></div><br>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="containerdiv">
+        <br><br>
+        <!-- <div class="col-sm-4 col-md-9 col-lg-7 col-xl-6"> -->
+        <div class="card p-4" id="crd">
+            <br>
+            <div class="immwidth">
+
+                <img src="{{data.image.url}}" class="img-circle" width="250" height="260" />
+                <br><br><br>
             </div>
-            <div class="pts">Photo</div><br>
-            <div class="nam">Name</div> <br>
-            <div class="gnd">Gender</div> <br>
-            <div class="phn">Phone number</div><br>
-            <div class="emi">Email</div><br>
-            <div class="add">Address</div><br>
 
-        </div>
+            <div class="tabb">
+                <table>
+                    <tr>
+                        <td>
+                            <b> Name</b>
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            {{data.name}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Gender</b>
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            {{data.gender}}
+                        </td>
 
-    </div> -->
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Phone number</b>
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            {{data.phone_no}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Adress</b>
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            {{data.address}}
+                        </td>
 
-    <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-        <div class="card p-4">
-            <div class=" d-flex mt-2">
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Email</b>
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            {{data.e_mail}}
+                        </td>
+                    </tr>
+
+
+                </table>
+            </div>
+
+
+
+            <div class=" d-flex mt-2" id="edit">
                 <a href="{% url 'customer:editprofile' %}"><input type="button" value="Edit Profile"></button></a>
-            </div>
-            <div class=" image d-flex flex-column justify-content-center align-items-center">
-                <button class="btn btn-secondary">
-                    <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" /></button><br>
-               <b> <span class="name mt-3">Name</span> </b><span class="idd">@eleanorpena</span>
-                <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                    <b><span class="idd1">Gender</span></b>
-                    <span><i class="fa fa-copy"></i></span>
-                </div>
-                <div class="text mt-3">
-                    <label for="">Phone number</label>
-                    <span>type address </span>
-                </div>
-                <div class="text mt-3">
-                    <label for="">Adress</label>
-                    <span>type address </span>
-                </div>
-                <div class="text mt-3">
-                    <label for="">Email</label>
-                    <span>type email here</span>
-                </div>
-                <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> <span><i
-                            class="fa fa-twitter"></i></span>
-                    <span><i class="fa fa-facebook-f"></i></span> <span><i class="fa fa-instagram"></i></span>
-                    <span><i class="fa fa-linkedin"></i></span>
-                </div>
-                <!-- <div class=" px-2 rounded mt-4 date ">
-                    <span class="join">Joined May,2021</span>
-                </div> -->
-            </div>
+            </div><br>
+
+
         </div>
+        <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> <span><i
+                    class="fa fa-twitter"></i></span>
+            <span><i class="fa fa-facebook-f"></i></span> <span><i class="fa fa-instagram"></i></span>
+            <span><i class="fa fa-linkedin"></i></span>
+        </div>
+
+       
+        <!-- </div> -->
     </div>
+
+
 </form>
 
 

@@ -1,0 +1,85 @@
+{% extends 'home_templates/master.html' %}
+
+{% load static %}
+{% block content %}
+
+<style>
+    #center {
+        width: 160px;
+        height: 180px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .centerr {
+        width: 160px;
+        height: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .container py-5 {
+        display: block;
+        /* margin-left: auto; */
+        /* margin-right: auto; */
+    }
+
+    #ror {
+        width: 300px;
+        height: auto;
+        /* color: blueviolet; */
+    }
+
+    .prddiv {
+        background-color: rgb(154, 154, 154);
+    }
+    .div{
+        width: 200px;
+        height: 500px;
+    }
+</style>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="prddiv">
+        <br>
+        <br>
+
+
+    
+    <div class="centerr">
+        <div class="div"><br>
+        <div class="card text-black">
+            <img src="{{product_details.p_image.url}}" class="card-img-top" id="center">
+            <div class="card-body">
+                <div class="text-center">
+                    <h5 class="card-title">{{product_details.p_name}}</h5>
+                    <p class="text-muted mb-4">{{product_details.Product_price}}</p>
+                
+                   
+                        <span>Rs:{{product_details.p_price}}
+                            <br>
+
+                        </span>
+                        <span>{{product_details.description}}</span>
+                        <input type="number" name="qty"><br>
+                        <br>
+                        <!-- <a href="{% url 'home:cus_registration' %}"><input id="btn" type="submit" value="Login"></a> -->
+                        <a href="{% url 'home:customerlogin' %}" id="btn"><input type="button" value="add to cart"></a>
+                           {{msg}}
+                    </div>
+                   <br>
+                </div>
+                
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'ad_templates/master.html' %}
+
+{% load static %}
+{% block content %}
+<style>
+    #ddiv {
+        padding-left: 50px;
+        background-color: #c7c7c7;
+        margin-left: 350px;
+        width: 400px;
+        height: auto;
+    }
+
+    .lbl {
+        margin-left: 40px;
+    }
+    .containerddiv {
+        width: 1475px;
+        background-color: rgb(210, 87, 142);
+    }
+    #divid{
+     
+        margin-left: 40px;
+    }
+</style>
+
+
+
+<div class="containerddiv">
+    <h1 class="hh">CHANGE PASSWORD</h1>
+
+    <div class="row">
+        <div class="col-sm-4">
+
+            <div id="ddiv">
+                <br><br>
+                <label class="lbl">Current Password</label>
+                <div  id="divid">
+                    <input type="password" value=""  placeholder="Current Password" name="cpass">
+                </div>
+                <br>
+                <label class="lbl" >New Password</label>
+                <div id="divid">
+                    <input type="password" value=""  placeholder="New Password" name="npass">
+                </div><br>
+
+                <label class="lbl">Confirm Password</label>
+                <div id="divid">
+                    <input type="password" value=""  placeholder="Confirm Password" name="rpass">
+                </div><br>
+                <div id="divid">
+                    <a href="{% url 'customer:home' %}">
+                        <input id="btn" type="button" value="SUBMIT"></a>
+                    <a href="{% url 'customer:change_pass' %}">
+                        <input id="btn" type="button" value="CANCEL"></a>
+                </div><br><br>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- js code 
+$(document).ready(function(){
+    $('.pass_show').append('<span class="ptxt">Show</span>');  
+    });
+      
+    
+    $(document).on('click','.pass_show .ptxt', function(){ 
+    
+    $(this).text($(this).text() == "Show" ? "Hide" : "Show"); 
+    
+    $(this).prev().attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; }); 
+    
+    });   -->
+
+{% endblock %}

@@ -2,6 +2,22 @@
 
 {% load static %}
 {% block content %}
+<style>
+    .row{
+        margin-left: 400px
+    }
+    .mm{
+        padding: 30px;
+        width: 500px;
+        height:300px ;
+        background-color: rgb(193, 176, 192);
+    }
+    .containerdiv{
+        width: 1475px;
+        background-color: blueviolet;
+        height: max-content;
+    }
+</style>
 
 <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -10,30 +26,33 @@
 <div id="headd">
     <h1 class="hh">CHANGE PASSWORD</h1>
 
-    <div class="container">
+    <div class="containerdiv">
 
         <div class="row">
             <div class="col-sm-4">
 
+               <div class="mm">
                 <label class="lbl">Current Password</label>
                 <div class="form-group_pass_show">
-                    <input type="password" value="" class="form-control" placeholder="Current Password">
+                    <input type="password" value="" class="form-control" placeholder="Current Password" name="old">
                 </div>
                 <label>New Password</label>
                 <div class="form-group_pass_show">
-                    <input type="password" value="" class="form-control" placeholder="New Password">
+                    <input type="password" value="" class="form-control" placeholder="New Password" name="newpass">
                 </div>
                 <label>Confirm Password</label>
                 <div class="form-group_pass_show">
-                    <input type="password" value="" class="form-control" placeholder="Confirm Password">
+                    <input type="password" value="" class="form-control" placeholder="Confirm Password"name ="re_pass">
                 </div>
+                <br>
                 <div>
                     <a href="{% url 'customer:home' %}">
                         <input id="btn" type="button" value="SUBMIT"></a>
                         <a href="{% url 'customer:change_pass' %}">
                         <input id="btn" type="button" value="CANCEL"></a>
                 </div>
-
+               </div>
+<br><br><br><br>
             </div>
         </div>
     </div>

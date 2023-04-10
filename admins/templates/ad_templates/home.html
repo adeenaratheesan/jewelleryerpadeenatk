@@ -1,0 +1,235 @@
+{% extends 'ad_templates/master.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    #welh {
+        text-align: center;
+    }
+
+    input.right {
+        float: right;
+    }
+
+    .right:hover {
+
+        display: flex;
+        color: red;
+        background-color: black;
+    }
+
+    .containerdiv {
+        background-color: rgb(19, 65, 62);
+
+    }
+
+    .carddiv {
+        margin-left: 50px;
+        /* padding: 20px; */
+    }
+
+    .btndiv {
+        margin-right: 30px;
+    }
+
+    .card-body {
+        padding: 10px;
+        border: 2px;
+        background-color: rgb(223, 168, 213);
+        width: 500px;
+        height: auto;
+        margin-left: 500px;
+    }
+</style>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- <div>
+        <h1 id="welh">WELCOME</h1 id="welh">
+    </div> -->
+
+    <div class="containerdiv">
+        <br>
+        <div class="card-body"><br>
+
+            <table>
+
+
+                <tr>
+                    <td>
+                        <div class="carddiv">
+                            <b> <label id="labl">Company Logo</label></b>
+                            <!-- <span>{{data.address}}</span> -->
+                        </div>
+                    </td>
+                    <td>
+
+                        <div class="carddiv">
+                            <img src="{{data.company_logo.url}}" height="30%" width="30%" />
+                        </div><br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="carddiv">
+                            <b> <label id="labl">Company name</label></b>
+                            <!-- <span>{{data.address}}</span> -->
+                        </div>
+                    </td>
+                    <td>
+
+                        <div class="carddiv">
+                            <!-- <b> <label for="">Address</label></b> -->
+                            <span id="spn">{{data.company_name}}</span>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="carddiv">
+                            <b> <label for="">Address</label></b>
+                            <!-- <span>{{data.address}}</span> -->
+                        </div>
+                    </td>
+                    <td>
+
+                        <div class="carddiv">
+                            <!-- <b> <label for="">Address</label></b> -->
+                            <span>{{data.address}}</span>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="carddiv">
+                            <b> <label for="">Phone</label></b>
+                            <!-- <span>{{data.mobile}}</span> -->
+                        </div><br>
+                    </td>
+                    <td>
+                        <div class="carddiv">
+                            <!-- <b> <label for="">Phone</label></b> -->
+                            <span>{{data.mobile}}</span>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="carddiv">
+                            <b><label for="">E-mail</label></b>
+                            <!-- <span>{{data.e_mail}}</span> -->
+                        </div><br>
+                    </td>
+                    <td>
+                        <div class="carddiv">
+                            <!-- <b><label for="">E-mail</label></b> -->
+                            <span>{{data.e_mail}}</span>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="carddiv">
+                            <b> <label for="">Bank Name</label></b>
+                            <!-- <span>{{data.bank_name}}</span> -->
+                        </div><br>
+                    </td>
+                    <td>
+                        <div class="carddiv">
+                            <!-- <b> <label for="">Bank Name</label></b> -->
+                            <span>{{data.bank_name}}</span>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <div class="carddiv">
+                            <b><label for="">Account holder name</label></b>
+                            <!-- <span>{{data.acc_name}}</span> -->
+                        </div><br>
+                    </td>
+                    <td>
+
+                        <div class="carddiv">
+                            <!-- <b><label for="">Account holder name</label></b> -->
+                            <span>{{data.acc_name}}</span>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="carddiv">
+                            <b><label for="">Account number</label></b>
+                            <!-- <span>{{data.accc_no}}</span> -->
+                        </div><br>
+                    </td>
+                    <td>
+                        <div class="carddiv">
+                            <!-- <b><label for="">Account number</label></b> -->
+                            <span>{{data.accc_no}}</span>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="carddiv">
+                            <b><label for="">IFSC</label></b>
+                            <!-- <span>{{data.ifsc}}</span> -->
+                        </div><br>
+                    </td>
+                    <td>
+                        <div class="carddiv">
+                            <!-- <b><label for="">IFSC</label></b> -->
+                            <span>{{data.ifsc}}</span>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <div class="carddiv">
+                            <b><label for="">Branch</label></b>
+                            <!-- <span>{{data.branch_name}}</span> -->
+                        </div><br>
+
+                    </td>
+                    <td>
+                        <div class="carddiv">
+                            <!-- <b><label for="">Branch</label></b> -->
+                            <span>{{data.branch_name}}</span>
+                        </div><br>
+
+                    </td>
+                </tr>
+
+                <tr colspan="2">
+                    <td>
+                        <div class="btndiv">
+
+                            <a href="{% url 'admins:edit_profile' %}"> <input type="button" value="Edit Profile" class="right"></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+
+        </div><br>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <br>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANISHQ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- <link rel="stylesheet" href="{% static 'css/earrings.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/masters.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/change_pass.css' %}">
+    <link rel="stylesheet" href="{% static 'css/order_his.css' %}">
+    <link rel="stylesheet" href="{% static 'css/update_stock.css' %}">
+
+
+<style>
+           input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 100%;
+}
+</style>
+</head>
+
+<body>
+    <header>
+
+
+        <div class="maindiv">
+            <div class="tablediv">
+
+                <table>
+                    <tr>
+                        <td align="left">
+                            <img class="tanishqimg" src="{% static 'images/Tanishq.jpg' %}" ,width="1px" ,height="1px">
+                        </td>
+                        <td colspan="2" align="center">
+
+                            <input type="text" name="search" placeholder="Search..">
+                  
+                        </td>
+                       
+
+                    </tr>
+                </table>
+
+
+                <div class="items">
+                    <table id="itemslabel" width="100%px">
+
+                        <tr>
+                            <td>---------</td>
+                            <td>
+                                <a href="{% url 'admins:home' %}"><label id="alllabel">Home</label></a>
+
+                            </td>
+                            <td>
+
+                                <a href="{% url 'admins:add_products' %}"><label id="alllabel">Add Product</label></a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admins:order_his' %}"><label id="alllabel">Order History</label></a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admins:change_pass' %}"><label id="alllabel">Change Password</label></a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admins:product_catelogue' %}"><label id="alllabel">Product Catelogue</label></a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admins:recent_orders' %}"> <label id="alllabel">Recent Orders</label></a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admins:product_catelogue' %}"><label id="alllabel">Update Stock</label></a>
+                            </td>
+                            <td>
+                                <a href="{% url 'home:homepage' %}"><label id="alllabel">Logout</label></a>
+                            </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+
+
+
+
+</body>
+
+</html>

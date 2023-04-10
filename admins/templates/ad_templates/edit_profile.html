@@ -1,0 +1,129 @@
+{% extends 'ad_templates/master.html' %}
+
+{% load static %}
+{% block content %}
+
+<style>
+    #upload {
+        border-radius: 50%;
+
+    }
+
+    .editdiv {
+
+        width: 75px;
+    }
+
+    .ddd {
+        
+        background-color: black;
+    }
+
+    .div {
+        width: 250px;
+    }
+
+    .main {
+        width: 1500px;
+        background-color: aquamarine;
+    }
+    .bodycard{
+        margin-left: 450px;
+    }
+</style>
+
+
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %} 
+
+    <div>
+        <h1 class="text-uppercase text-center mb-5" id="create">Edit Profile</h1>
+
+
+        <div class="bodycard">
+            <div class="col-sm-4 col-md-9 col-lg-7 col-xl-6">
+                <div class="card-body p-5">
+    
+                    
+                    <div class="input_div">
+                        <button class="btn btn-secondary">
+                            <img src="{{data.company_logo.url}}" height="75%" width="75%" /></button><br>
+                            <!-- <span>{{msg}}</span> -->
+                        Upload photo <input type="file" name="company_logo" id="Upload"> <br>
+                    </div>
+                    <div class="input_div">
+                        <input type="text" id="form3Example1cg" class="form-control  form-control-lg" value="{{data.company_name}}"
+                             name="company_name" required />
+                        <br>
+                    </div>
+                    
+                    <div class="input_div">
+                        <input type="text" id="form3Example3cg" class="form-control form-control-lg"
+                            value="{{data.address}}" name="address" required />
+                        <br>
+                    </div>
+                    <div class="input_div">
+                        <input type="number" id="form3Example3cg" class="form-control form-control-lg"
+                            value="{{data.mobile}}" name="phone" required />
+                        <br>
+                    </div>
+    
+                    <div class="input_div">
+                        <input type="email" id="form3Example3cg" class="form-control form-control-lg"
+                            value="{{data.e_mail}}" name="e_mail" required />
+                        <br>
+    
+                    </div>
+    
+    
+                    <div class="input_div">
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg"
+                            value="{{data.bank_name}}" name="bank_name" required>
+                        <br>
+    
+                    </div>
+                    <div class="input_div">
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg"
+                            value="{{data.acc_name}}" name="acc_name" required>
+                        <br>
+    
+                    </div>
+                    <div class="input_div">
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg"
+                            value="{{data.accc_no}}" name="accc_no" required>
+                        <br>
+    
+                    </div>
+                    <div class="input_div">
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg"
+                            value="{{data.ifsc}}" name="ifsc" required>
+                        <br>
+    
+                    </div>
+                    <div class="input_div">
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg"
+                            value="{{data.branch_name}}" name="branch_name" required>
+                        <br>
+    
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        
+                        <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="update">
+                    </div>          
+    
+                   
+    
+    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

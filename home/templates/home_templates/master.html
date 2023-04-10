@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>TANISHQ</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -16,73 +17,280 @@
 
     <link rel="stylesheet" href="{% static 'css/earrings.css' %}">
     <link rel="stylesheet" href="{% static 'css/master.css' %}">
-   
+    <style>
+        input[type=text] {
+            width: 130px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        /* When the input field gets focus, change its width to 100% */
+        input[type=text]:focus {
+            width: 100%;
+        }
+
+        .dropbtn {
+            background-color: rgb(37, 17, 92);
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        } */
+        .tb22div {
+            background-color: rgb(37, 17, 92);
+            padding-left: 75px;
+        }
+
+        table {
+            border-spacing: 40px;
+        }
+
+        #mia {
+            color: aliceblue;
+        }
+    </style>
+
 
 </head>
 
 <body>
     <header>
 
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="maindiv">
+                <div class="tablediv">
 
-        <div class="maindiv">
-            <div class="tablediv">
-
-                <table width="100%">
-                    <tr>
-                        <td align="left">
-                            <img class="tanishqimg" src="{% static 'images/Tanishq.jpg' %}" ,width="1px" ,height="1px">
-                        </td>
-                        <td  align="center">
-                           
-                                <input type="text" id="fname" name="firstname" placeholder="Search....">
-                           
-                        </td>
-                        <td><a href="{% url 'home:login' %}"><input id="btn" type="submit" value="Login"></a></td>
-                        <td><a href="{% url 'home:cus_registration' %}"><input id="btn" type="submit" value="Registration"></a></td>
-
-                       
-                    </tr>
-                </table>
-
-
-                <div class="items">
-                    <table id="itemslabel" width="100%px">
-
+                    <table width="100%">
                         <tr>
-                           
-                            <td>
-                                <a href="{% url 'home:homepage' %}"> <label id="alllabel">ALL JEWELLERY</label></a>
-
+                            <td align="left">
+                                <img class="tanishqimg" src="{% static 'images/Tanishq.jpg' %}" ,width="1px"
+                                    ,height="1px">
                             </td>
                             <td>
 
-                                <a href="{% url 'home:earrings' %}"><label id="alllabel">EARRINGS</label></a>
+                                <input type="text" name="search" placeholder="Search..">
                             </td>
-                            <!-- <td>
-                                <a href="{% url 'home:rings' %}"><label id="alllabel">RINGS</label></a>
-                            </td> -->
-                            <td>
-                                <a href="{% url 'home:necklaces' %}"><label id="alllabel">NECKLACES</label></a>
+                            <td><a href="{% url 'home:customerlogin' %}"><input id="btn" type="button"
+                                        value="Login"></a>
                             </td>
-                            <td>
-                                <a href="#"><label id="alllabel">GOLD</label></a>
-                            </td>
-                            <td>
-                                <a href="#"> <label id="alllabel">DIAMOND</label></a>
-                            </td>
-                            <td>
-                                <a href="#"><label id="alllabel">MIA</label></a>
-                            </td>
-                            <td>
-                                <a href="#"><label id="alllabel">COLLECTIONS</label></a>
-                            </td>
+                            <td><a href="{% url 'home:cus_registration' %}"><input id="btn" type="button"
+                                        value="Register"></a></td>
+
 
                         </tr>
                     </table>
 
+
+
                 </div>
+                <div class="tb2div">
+                    <div class="tb22div">
+                        <table width="100%">
+                            <tr>
+                                <td>
+
+                                    <div class="dropdown">
+                                        <a href="{% url 'home:list_products' %}?items=all" id="mia"> <button
+                                                class="dropbtn">ALL
+                                                JEWELLERY</a></button>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    <div class="dropdown">
+                                        <a href="" id="mia"> <button class="dropbtn">EARRINGS</a></button>
+                                        <div class="dropdown-content">
+                                            <table>
+                                                <tr>
+                                                    <td>
+
+
+                                                        <b>STYLE</b>
+
+                                                        <a href="{% url 'home:list_products' %}?category=Earrings">All
+                                                            earrings</a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?style=Jhumkas">Jhumkas</a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?style=Hoops and Huggies">Hoops
+                                                            & huggies</a>
+                                                        <a href="{% url 'home:list_products' %}?style=Stud">Stud</a>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="dropdown">
+                                        <a href="" id="mia"> <button class="dropbtn">NECKLACES</a></button>
+
+                                        <div class="dropdown-content">
+                                            <b>STYLE</b>
+                                            <a
+                                                href="{% url 'home:list_products' %}?style=Mangalsutra">Mangalsutra</a>
+                                            <a href="{% url 'home:list_products' %}?style=Bib">Bib</a>
+                                            <a
+                                                href="{% url 'home:list_products' %}?style=Traditional">Traditional</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a href="{% url 'home:mia'%}" id="mia"> <button class="dropbtn">MIA</a></button>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a href=" " id="mia">
+                                            <button class="dropbtn">Gold</a></button>
+                                        <div class="dropdown-content">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#"><b>CATEGORY</b></a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?type=Gold&category=Earrings">
+                                                            Earrings</a>
+                                                        <a href="{% url 'home:list_products' %}?category=Necklace">
+                                                            Necklace </a>
+                                                        <a href="#"></a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="#"><b>EARRINGS</b></a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?type=Gold&style=Jhumkas">Jhumkas</a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?type=Gold&style=Hoops and Huggies">Hoops
+                                                            & huggies</a>
+                                                        <a href="{% url 'home:list_products' %}?style=Stud">Stud</a>
+
+
+                                                    </td>
+                                                    <td>
+                                                        <a href="#"><b>NECKLACE</b></a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?type=Gold&style=Mangalsutra">Mangalsutra</a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?type=Gold&style=Bib">Bib</a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?type=Gold&style=Traditional">Traditional</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a href="" id="mia"><button class="dropbtn">DIAMOND</a></button>
+
+                                        <div class="dropdown-content">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <label for=""><a href="#"><b>CATEGORY</b></a></label>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?type=diamond&category=Earrings">
+                                                            Earrings</a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?type=Diamond&category=Necklace">
+                                                            Necklace </a>
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="dropbtn">COLLECTIONS</a></button>
+
+                                        <div class="dropdown-content">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#"><b>STYLE</b></a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?style=Mangalsutra">Mangalsutra</a>
+                                                        <a href="{% url 'home:list_products' %}?style=Bib">Bib</a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?style=Traditional">Traditional</a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?style=Jhumkas">Jhumkas</a>
+                                                        <a
+                                                            href="{% url 'home:list_products' %}?style=Hoops and Huggies">Hoops
+                                                            & huggies</a>
+                                                        <a href="{% url 'home:list_products' %}?style=Stud">Stud</a>
+
+                                                    </td>
+                                                    <td>
+                                                        <a href="#"><b>CATEGORY</b></a>
+                                                        <a href="{% url 'home:list_products' %}?category=Earrings">
+                                                            Earrings</a>
+                                                        <a href="{% url 'home:list_products' %}?category=Necklace">
+                                                            Necklace </a>
+                                                        <a href="#"></a>
+                                                        <a href="#"></a>
+                                                        <a href="#"></a>
+                                                        <a href="#"></a>
+                                                        <a href="#"></a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
             </div>
-        </div>
 
     </header>
 

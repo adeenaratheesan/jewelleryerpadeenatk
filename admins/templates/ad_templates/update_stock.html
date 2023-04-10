@@ -1,0 +1,129 @@
+{% extends 'ad_templates/master.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .td {
+        padding: 50px;
+        margin-left: 100px;
+      
+    }
+
+    #bb {
+        margin-left: 400px;
+    }
+
+</style>
+
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="upd">
+        <div>
+            <h1 id="update">UPDATE STOCK</h1>
+        </div>
+        <div class="td">
+            <table>
+                <tr>
+                    <td>
+                        <div class="inpu">
+                            <label for="">Image</label><br>
+                            <div>
+                                <div>
+                                    <button class="btn btn-secondary">
+                                        <img src="{{data.p_image.url}}" height="25%" width="25%" /></button><br>
+                                    <!-- <span>{{msg}}</span> -->
+                                    Upload photo <input type="file" id="myfile" name="ppimg"> <br>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div>
+                       
+                        <input type="file" id="myfile" name="ppimg">
+                    </div> -->
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <label for="">Product Category</label>
+                            <input type="text" name="pcate" value="{{data.category}}">
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <label for="">Product Type</label>
+                            <input type="text" name="ptype" id="ppnum" value="{{data.type}}">
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <label for="">Product Name</label>
+                            <input type="text" name="pname" id="ppname" value="{{data.p_name}}">
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <label for="">Product Number</label>
+                            <input type="text" name="pnum" id="ppnum" value="{{data.p_number}}">
+                        </div><br>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <div>
+                            <label for="">Description</label>
+                            <input type="text" name="pdec" id="ppdec" value="{{data.description}}">
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <label for="">Stock</label>
+                            <input type="text" name="cstock" id="pcstock" value="{{data.p_stock}}">
+                        </div><br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div>
+                            <label for="">Product price</label>
+                            <input type="text" name="pprice" id="pprice" value="{{data.p_price}}">
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="bb">
+                            <input type="submit" name="s_submit" value="submit">
+                        </div><br>
+                    </td>
+                </tr>
+            </table>
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+</form>
+
+{% endblock %}

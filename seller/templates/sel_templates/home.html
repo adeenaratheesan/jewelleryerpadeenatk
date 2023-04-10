@@ -15,55 +15,64 @@
         color: red;
         background-color: black;
       }
+      .containerdiv{
+        padding: 20px;
+        background-color: rgb(105, 132, 128);
+        /* margin-left: 20px; */
+      }
 </style>
 
 <form action="">
 
     <div><h1 id="welh">WELCOME</h1 id="welh"></div>
        
-    <div class="container">
+    <div class="containerdiv">
+        
+        
+        
+        
         <div>
           
-           <a href="{% url 'seller:edit_profile' %}"> <input type="button" value="Edit Profile" class="right"></a>
+           <a href="{% url 'seller:edit_profile' %}"> <input type="button" value="Edit Profile" class="right"></a><br>
         </div>
         <div class="img">
             <label for="">Image</label>
-        </div>
+        </div><br>
         <div class="container-name">
             <label for="">Name</label>
             <span>type name</span>
-        </div>
+        </div><br>
         <div class="Company_name">
             <label for="">Company name</label>
             <span>type Company_name</span>
-        </div>
+        </div><br>
         <div>
             <label for="">Address</label>
-        </div>
+        </div><br>
         <div>
             <label for="">Phone</label>
-        </div><div>
+        </div><div><br>
             <label for="">E-mail</label>
-        </div>
+        </div><br>
     <div>
         <label for="">Bank Name</label>
-    </div>
+    </div><br>
     <div>
         <label for="">Account holder name</label>
-    </div>
+    </div><br>
         <div>
             <label for="">Account number</label>
-        </div>
+        </div><br>
         <div>
             <label for="">IFSC</label>
-        </div>
+        </div><br>
         <div>
             <label for="">Branch</label>
         </div>
-       
+        <br>
     <div>
         <label for="">Username</label>
-    </div>
+    </div><br>
     </div>
 </form>
 <!-- {% endblock %} <form action=""method="POST" enctype="multipart/form-data">

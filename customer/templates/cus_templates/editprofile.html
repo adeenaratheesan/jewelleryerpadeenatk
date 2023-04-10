@@ -6,105 +6,111 @@
 <style>
     #upload {
         border-radius: 50%;
-        
+
     }
-    /* .ddd{
-        margin: auto;
-        padding: 20px;
-    } */
+
+    .editdiv {
+
+        width: 75px;
+    }
+
+    .ddd {
+        /* margin: auto;
+        padding: 20px; */
+        width: 110px;
+        background-color: black;
+    }
+
+    .div {
+        width: 250px;
+    }
+
+    .main {
+        width: 1500px;
+        background-color: aquamarine;
+    }
+    .bodycard{
+        margin-left: 450px;
+    }
 </style>
 
 
 
 <form action="" method="POST" enctype="multipart/form-data">
-    <div class="editdiv">
-        <div class="containerdiv">
-            <section class="vh-100 bg-image">
-                <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-                    <div class="container h-100" id="ddd">
-                        <div class="row d-flex justify-content-center align-items-center h-100">
-                            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                                <div class="card" style="border-radius: 15px;">
-
-                                    <div class="card-body p-5">
-
-                                        <h1 class="text-uppercase text-center mb-5" id="create">Edit Profile</h1>
+    {% csrf_token %} 
 
 
-                                        <div class="input_div">
-                                            Upload photo <input type="file" name="c_img" id="Upload"> <br>
-                                        </div>
-                                        <div class="input_div">
-                                            <input type="text" id="form3Example1cg"
-                                                class="form-control  form-control-lg" placeholder="Entter Your Name"
-                                                name="name" required />
-                                            <br>
-                                        </div>
-                                        <div class="input_div">
-                                            <label for="">Gender</label>
-                                            <input type="radio" name="c_gender" value="female" required>Female
-                                            <input type="radio" name="c_gender" value="male" required>Male</td>
-                                            <br>
-                                            <br>
-
-                                        </div>
-
-                                        <div class="input_div">
-                                            <input type="number" id="form3Example3cg"
-                                                class="form-control form-control-lg" placeholder="Phone number"
-                                                name="phone" required />
-                                            <br>
-                                        </div>
-
-                                        <div class="input_div">
-                                            <input type="email" id="form3Example3cg"
-                                                class="form-control form-control-lg" placeholder="Your Email"
-                                                name="email" required />
-                                            <br>
-
-                                        </div>
+    <div>
+        <h1 class="text-uppercase text-center mb-5" id="create">Edit Profile</h1>
 
 
-                                        <div class="input_div">
-                                            <textarea type="text" id="form3Example4cdg"
-                                                class="form-control form-control-lg" placeholder="Address"
-                                                name="address" required></textarea>
-                                            <br>
+        <div class="bodycard">
+            <div class="col-sm-4 col-md-9 col-lg-7 col-xl-6">
+                <div class="card-body p-5">
+    
+                    
+                    <div class="input_div">
+                        <button class="btn btn-secondary">
+                            <img src="{{data.image.url}}" height="100%" width="100%" /></button><br>
 
-                                        </div>
-
-
-
-
-                                        <div class="d-flex justify-content-center">
-                                            <input id="btn" type="button" value="UPDATE">
-                                            <br>
-                                        </div>
-
-
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        Upload photo <input type="file" name="img" id="Upload"> <br>
                     </div>
+                    <div class="input_div">
+                        <input type="text" id="form3Example1cg" class="form-control  form-control-lg" value="{{data.name}}"
+                             name="name" required />
+                        <br>
+                    </div>
+                    <div class="input_div">
+                        <label for="">Gender</label>
+                        <input type="radio" name="c_gender" value="{{data.gender}}" required>Female
+                        <input type="radio" name="c_gender" value="{{data.gender}}" required>Male</td>
+                        <br>
+                        <br>
+    
+                    </div>
+    
+                    <div class="input_div">
+                        <input type="number" id="form3Example3cg" class="form-control form-control-lg"
+                            value="{{data.phone_no}}" name="phone" required />
+                        <br>
+                    </div>
+    
+                    <div class="input_div">
+                        <input type="email" id="form3Example3cg" class="form-control form-control-lg"
+                            value="{{data.e_mail}}" name="email" required />
+                        <br>
+    
+                    </div>
+    
+    
+                    <div class="input_div">
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg"
+                            value="{{data.address}}" name="address" required></textarea>
+                        <br>
+    
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <!-- <button type="button"
+                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                        <br> -->
+                        <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="UPDATE">
+                    </div>          
+    
+                    <!-- <div class="d-flex justify-content-center">
+                        <input id="btn" type="button" value="UPDATE">
+                        <br>
+                    </div> -->
+    
+    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+    
                 </div>
-            </section>
+            </div>
         </div>
     </div>
-
-    </div>
-
 </form>
 {% endblock %}

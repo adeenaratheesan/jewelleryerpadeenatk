@@ -1,0 +1,235 @@
+{% extends 'ad_templates/master.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .ttb {
+        padding: 50px;
+    }
+
+    .nav {
+        background-color: rgb(121, 116, 125);
+        margin-left: 450px;
+        padding: 80px;
+        width: 500px;
+        height: auto;
+    }
+
+    p {
+        color: rgb(255, 255, 255);
+    }
+</style>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="ttb">
+        <div>
+            <h1 class="hadd">ADD PRODUCT</h1>
+        </div>
+        <div class="nav">
+            <table class="tb">
+                <tr>
+                    <td><label id="lbl" for="">
+                            <p>Product category</p>
+                        </label></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div class="maindiv">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="category"
+                                id="select1">
+                                <option selected>select category</option>
+                                <option value="Earrings">Earrings</option>
+                                <option value="Necklaces">Necklaces</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label id="lbl" for="">
+                            <p>Product type</p>
+                        </label></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="type"id="select2">
+                            <option selected>select type</option>
+                             
+                            <option value="Gold">Gold</option>
+                            <option value="Diamond">Diamond</option>
+
+                           
+                        </select>             
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td><label id="lbl" for="">
+                            <p>Product style</p>
+                        </label></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                        <!-- <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="style"id="select3">
+                            <option selected>select style</option>
+                            <option value=""></option>
+                        </select>  -->
+                        <input type="text" placeholder="" name="style">
+                        
+                         </select>
+                       
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label id="lbl" for="">
+                            <p>Product Name</p>
+                        </label></td>
+                </tr>
+                <tr>
+
+                    <td><input type="text" placeholder="" name="s_pname"></td>
+                </tr>
+                <tr>
+                    <td><label id="lbl" for="">
+                            <p>Product number</p>
+                        </label></td>
+
+                </tr>
+                <tr>
+                    <td><input type="text" name="s_pid"></td>
+                <tr>
+                    <td><label id="lbl" for="">
+                            <p>Description</p>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td><textarea name="s_pdesc" id="" cols="30" rows="10"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td><label id="lbl" for="">
+                            <p>Product Stock</p>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="" name="s_pstock"></td>
+                </tr>
+
+
+                <tr>
+                    <td><label id="lbl" for="">
+                            <p>Product price</p>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="s_pprice"></td>
+                </tr>
+
+
+
+                <tr>
+                    <td><label id="lbl" for="myfile">
+                            <p>Product image</p>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="file" id="myfile" name="s_pimg"><br><br></td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <!-- <div class="d-flex justify-content-center"> -->
+
+                        <input type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+                            value="update">
+                        <!-- </div>           -->
+
+
+                        <!-- <input type="submit" name="s_submit" value="submit"> -->
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+</form>
+
+
+<!-- <script>
+
+    $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                "X-CSRFToken": $('[name=csrfmiddlewaretoken]').val()  //passing csrf token in ajax request
+            }
+        })
+        $('#select1').change(function () {
+            var selectedValue = $(this).val();
+            
+            $.ajax({
+                url: '{% url "admins:get_type" %}',
+                type: 'POST',
+                data: { 
+                    'selectedValue': selectedValue,
+                 },
+                success: function (response) {
+                    console.log(response.data)
+                    // alert(response.data)
+                    // $('#select2').html(response.options);
+
+                   data = response.data
+
+                    
+                    ptype = ""
+                    $('#select2').empty()
+                    for (i in data) {
+                        ptype += "<option value=" + data[i].id + ">" + data[i].type + "</option>"
+                    }
+                    $('#select2').append(ptype)
+                    console.log(ptype)
+
+                }
+            })
+        }) -->
+        // $('#select2').change(function () {
+        //     var selectedValue2 = $(this).val();
+            
+        //     $.ajax({
+        //         url: '{% url "admins:get_addproduct" %}',
+        //         type: 'POST',
+        //         data: { 
+        //             'selectedValue2': selectedValue2,
+        //          },
+        //         success: function (response) {
+        //             console.log(response.datas)
+        //             alert(response.data)
+        //             $('#select2').html(response.options);
+
+        //            data2 = response.datas
+
+                    
+        //             ptype = ""
+        //             $('#select3').empty()
+        //             for (i in data2) {
+        //                 ptype += "<option value=" + data2[i].id + ">" + data2[i].type + "</option>"
+        //             }
+        //             $('#select3').append(ptype)
+        //             console.log(ptype)
+
+        //         }
+        //     })
+        // })
+      
+                <!-- });
+
+</script> -->
+
+{% endblock %}

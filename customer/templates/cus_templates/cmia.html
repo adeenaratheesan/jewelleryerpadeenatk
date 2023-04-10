@@ -1,0 +1,167 @@
+{% extends 'cus_templates/master.html' %}
+
+{% load static %}
+{% block content %}
+
+<style>
+    .imgwidth {
+        width: 100%;
+        height: auto;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .shop {
+        text-align: center;
+        color: rgb(214, 12, 12);
+    }
+
+    .browse {
+        text-align: center;
+    }
+
+    .cardimg {
+        width: 160px;
+        height: 180px;
+    }
+
+    .row {
+        padding: 5%;
+        margin-left: 75px;
+        margin-right: 20px;
+    }
+
+    divmain {
+        background-color: rgb(201, 201, 200);
+    }
+</style>
+
+
+
+<!-- ************************************************************************************************************************************* -->
+<div class="divmain">
+    <div>
+        <img class="imgwidth" src="{% static 'images/mia.jpg' %}">
+    </div>
+
+
+
+
+    <div>
+        <br><br>
+        <h1 class="shop"><b>Shop Jewellery By your favourite</b></h1>
+        <h5 class="browse">Browse through your favourite categories. We've got them all!</h5>
+    </div>
+    <!-- <div class="row">
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body teacher-card">
+                    <img class="cardimg" src="{% static 'images/neck4.jpg' %}">
+                    <h3 class="card-title">Teachers</h3>
+                    <a href="{% url 'home:homepage' %}" class="btn btn-primary">Click Here</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body teacher-card">
+                    <img class="cardimg" src="{% static 'images/neck4.jpg' %}">
+                    <h3 class="card-title">Teachers</h3>
+                    <a href="{% url 'home:homepage' %}" class="btn btn-primary">Click Here</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body teacher-card">
+                    <img class="cardimg" src="{% static 'images/neck4.jpg' %}">
+                    <h3 class="card-title">Teachers</h3>
+                    <a href="{% url 'home:homepage' %}" class="btn btn-primary">Click Here</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body teacher-card">
+                    <img class="cardimg" src="{% static 'images/neck4.jpg' %}">
+                    <h3 class="card-title">Teachers</h3>
+                    <a href="{% url 'home:homepage' %}" class="btn btn-primary">Click Here</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+ -->
+    <div class="row">
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <img class="cardimg" src="{% static 'images/babyshark.jpg' %}">
+                    <h5 class="card-title">Red diamond necklace</h5>
+                    <p class="card-text">Flower bridal jewellery set for bride party.</p>
+                    <a href="#" class="btn btn-primary">explore</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <img class="cardimg" src="{% static 'images/stunningdiamond.jpg' %}">
+                    <h5 class="card-title">Diamond necklace</h5>
+                    <p class="card-text">Stunning diamond bridal necklace.</p>
+                    <a href="#" class="btn btn-primary">explore</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <img class="cardimg" src="{% static 'images/goldneck1.jpg' %}">
+                    <h5 class="card-title">Gold necklace</h5>
+                    <p class="card-text">Stunning diamond bridal necklace.</p>
+                    <a href="#" class="btn btn-primary">explore</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <img class="cardimg" src="{% static 'images/goldearing1.jpg' %}">
+                    <h5 class="card-title">Gold earrings</h5>
+                    <p class="card-text">gold earrings for party ware</p>
+                    <a href="#" class="btn btn-primary">explore</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <img class="cardimg" src="{% static 'images/diamondearing.jpg' %}">
+                    <h5 class="card-title">Diamond earring</h5>
+                    <p class="card-text">Stunning diamond bridal earring.</p>
+                    <a href="#" class="btn btn-primary">explore</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <img class="cardimg" src="{% static 'images/reddiamond.jpg' %}">
+                    <h5 class="card-title">Red diamondearing</h5>
+                    <p class="card-text">Luxury queen red earrings AAA cubic <br> zirconia high ritro wedding ring</p>
+                    <a href="#" class="btn btn-primary">explore</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'home_templates/footer.html' %}
+{% endblock %}

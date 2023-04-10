@@ -11,6 +11,7 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     .centerr {
         width: 160px;
         height: 600px;
@@ -18,7 +19,7 @@
         margin-left: auto;
         margin-right: auto;
     }
-    
+
 
     .container py-5 {
         display: block;
@@ -35,73 +36,51 @@
     .prddiv {
         background-color: rgb(154, 154, 154);
     }
+    .div{
+        width: 200px;
+        height: 500px;
+    }
 </style>
-<div class="prddiv">
-<br>
-<br>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="prddiv">
+        <br>
+        <br>
 
 
+    
     <div class="centerr">
+        <div class="div"><br><br>
         <div class="card text-black">
-            <img src="{% static 'images/neck5.jpg' %}" class="card-img-top" id="center">
+            <br>
+            <img src="{{product_details.p_image.url}}" class="card-img-top" id="center">
             <div class="card-body">
                 <div class="text-center">
-                    <h5 class="card-title">Believing is seeing</h5>
-                    <p class="text-muted mb-4">Apple pro display XDR</p>
-                </div>
-                <div>
-                    <div class="d-flex justify-content-between">
-                        <span>Pro Display XDR</span><span>$5,999</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Pro stand</span><span>$999</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Vesa Mount Adapter</span><span>$199</span>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between total font-weight-bold mt-4">
-                    <span>Total</span><span>$7,197.00</span>
-                    <br>
-                </div>
-            </div>
+                    <h5 class="card-title">{{product_details.p_name}}</h5>
+                    <p class="text-muted mb-4">{{product_details.Product_price}}</p>
+                
+                   
+                        <span>Rs:{{product_details.p_price}}
+                            <br>
 
+                        </span>
+                        <span>{{product_details.description}}</span>
+                        <input type="number" name="qty"><br>
+                        <br>
+
+                        <a href="#" id="btn"><input type="submit" value="add to cart"></a>
+                        {{msg}}
+                    </div>
+                   <br>
+                </div>
+                
+
+
+            </div>
         </div>
     </div>
 </div>
 
-<!-- <section style="background-color: #eee;">
-
-    <div class="row justify-content-center "id="ror">
-        <div class="col-md-8 col-lg-6 col-xl-4">
-            <div class="card text-black">
-                <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
-                <img class="center" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/3.webp"
-                    class="card-img-top" alt="Apple Computer" />
-                <div class="card-body">
-                    <div class="text-center">
-                        <h5 class="card-title">Believing is seeing</h5>
-                        <p class="text-muted mb-4">Apple pro display XDR</p>
-                    </div>
-                    <div>
-                        <div class="d-flex justify-content-between">
-                            <span>Pro Display XDR</span><span>$5,999</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>Pro stand</span><span>$999</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>Vesa Mount Adapter</span><span>$199</span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between total font-weight-bold mt-4">
-                        <span>Total</span><span>$7,197.00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
-</section> -->
-
+</form>
 {% endblock %}

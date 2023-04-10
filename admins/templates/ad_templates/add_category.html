@@ -1,0 +1,45 @@
+{% extends 'ad_templates/master.html' %}
+
+{% load static %}
+{% block content %}
+
+<style>
+.divc{
+    height: 640px;
+    padding: 50px;
+    background-color: rgb(94, 19, 94);
+}
+.text{
+    margin-left: 50px;
+    text-align: center;
+    color: aliceblue;
+}
+btn{
+    background-color: #555555;
+}
+</style>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="divc">
+
+        <div class="text">
+            <h1>ADD CATEGORY</h1>
+        </div>
+        <div class="maindiv">
+            <input type="text" name="category"placeholder="Category name">
+        </div>
+        <br>
+        <div>
+            <input type="text" name="description"placeholder="Category description">
+        </div>
+
+<br>
+
+        <div class="d-flex justify-content-center">
+
+            <input type="submit" class="btn-block btn-lg gradient-custom-4 text-body" value="update" id="btn">
+        </div>
+    </div>
+</form>
+
+{% endblock %}
