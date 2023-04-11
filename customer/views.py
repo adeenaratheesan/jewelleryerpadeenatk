@@ -12,7 +12,7 @@ def home(request):
     return render(request,'cus_templates/home.html')
 
 def logout(request):
-    del request.session['cusstomer']
+    del request.session['customer']
     request.session.flush()
     return redirect('home:homepage')
 

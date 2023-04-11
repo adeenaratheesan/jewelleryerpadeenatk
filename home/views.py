@@ -25,8 +25,6 @@ def list_products(request):
             product_list = Product.objects.filter(type = request.GET['type'], category = request.GET['category'])
         if 'style' in request.GET:
             product_list = Product.objects.filter(type = request.GET['type'], style = request.GET['style'])
-
-
     elif 'category' in request.GET:
         search_query = request.GET['category']
         product_list = Product.objects.filter(category = search_query)
