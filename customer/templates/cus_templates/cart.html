@@ -35,10 +35,19 @@
         width: 100px;
         height: 100px;
     }
+    .rmbtn{
+        background-color: red;
+        padding: 2%;
+        display: block;
+        text-align: center;
+        color: white !important;
+    }
 </style>
 </head>
 
 <body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 <div class="header">
     <h1 class="cart">CART</h1>
 </div>
@@ -66,28 +75,134 @@
 <td>
     {{Mycart.product.p_name}}
 </td>
-<td>{{Mycart.product.p_price}}</td>
+<td>₹{{Mycart.product.p_price}}
+    <input type="number" name="" value="{{product.product.price}}" id="price_{{product.product.id}}" hidden>
+
+</td>
 <td>
+    <!-- <input type="number" min="1" value="{{ product.qty }}" class="update-qty" max=""
+        data-item="{{ product.product.id }}" id="qty_{{product.product.id}}">
+      <span id="out_{{product.product.id}}"></span> -->
     {{Mycart.quantity}}
 </td>
 <td>
-    {{Mycart.total}}
+    <span id="total_{{product.product.id}}"> {{Mycart.total}}</span>
+   
 </td>
 <td>
 
-    <a href="{% url 'customer:delete_item' Mycart.id %}"><button>Remove</button></a>
+    <a class="rmbtn" href="{% url 'customer:delete_item' Mycart.id %}">Remove</a>
 
 
 </td>
+
+
+
+
 </tr>
 
 <!-- {{grandtotal}} -->
 {% endfor %}
 <tr>
-    <td> <span>grand total:{{grandtotal}}</span></td>
+    <td> <span id ="grandtotal">{{grandtotal}}</span></td>
+</tr>
+<tr>
+    <td>
+        <a><button type="button" id="rzp_buynow">Buy now</button></a>
+
+    </td>
+    <!-- <td>
+        <a href="{% url 'customer:cart' %}"><button>Cancel</button></a>
+
+    </td> -->
 </tr>
 </tbody>
 </table>
 </div>
+
+  
+    </form>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+         $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                "X-CSRFToken": $('[name=csrfmiddlewaretoken]').val()  //passing csrf token in ajax request
+            }
+        })
+
+        $('#rzp_buynow').click(function(){
+            // console.log("inside funtion")
+            grandtotal=$("#grandtotal").html()
+            console.log(grandtotal)
+            $.ajax({
+                url:'{% url "customer:order_product" %}',
+                type:'POST',
+                data:{
+                    'totalprice':grandtotal
+                },
+                success:function(response){
+                    console.log("payment_id="+response.id);
+                    var options={
+                        "key":"rzp_test_eAalpDoJ4ZVc3e",
+                        "grandtotal":response.grandtotal,
+                        "currency":"INR",
+                        "name":"Tanishq",
+                        // "image":
+                        "id":"1234",
+                        "order_id":response.id,
+                        "handler":function(response){
+                            console.log( "pid",response.razorpay_payment_id);
+                            console.log("oid",response.razorpay_order_id);
+                            console.log("sig", response.razorpay_signature)
+                            updatepayment(response)
+                        },
+                        redirect:true,
+                        "theme":{
+                            "color":"#3399cc"
+                        }
+                
+                        };
+                        var rzpl=new Razorpay(options);
+                        rzpl.on('payment.failed',function(response){
+                            alert(response.error.code);
+                            alert(response.error.description);
+                            alert(response.error.source);
+                            alert(response.error.step);
+                            alert(response.error.reason);
+                            alert(response.error.metadata.payment_id);
+                        });
+                        rzpl.open();
+
+                    }
+                
+            })
+
+        })
+
+        
+        function updatepayment(res){
+            console.log(res)
+            $.ajax({
+                url:'{% url "customer:updatepayment" %}',
+
+                type:'POST',
+                data:{
+                    'pid':res.razorpay_payment_id,
+                    'oid':res.razorpay_order_id,
+                    'sig':res.razorpay_signature
+                },
+                success:function(response){
+                    alert("Your order placed successfully")
+                    window.location.reload();
+                }
+            })
+        }
+
+    });
+        
+    </script>
+
+
 
 {% endblock %}

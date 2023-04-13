@@ -3,19 +3,24 @@
 {% load static %}
 {% block content %}
 <style>
-    .row{
+    .row {
         margin-left: 400px
     }
-    .mm{
+
+    .mm {
         padding: 30px;
         width: 500px;
-        height:300px ;
+        height: 300px;
         background-color: rgb(193, 176, 192);
     }
-    .containerdiv{
+
+    .containerdiv {
         width: 1475px;
-        background-color: blueviolet;
+        background-color: rgb(115, 69, 74);
         height: max-content;
+    }
+    .h6{
+        color: aliceblue;
     }
 </style>
 
@@ -23,40 +28,56 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <!------ Include the above in your HEAD tag ---------->
-<div id="headd">
-    <h1 class="hh">CHANGE PASSWORD</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div id="headd">
 
-    <div class="containerdiv">
+        <div class="containerdiv">
+            <h1 class="hh">CHANGE PASSWORD</h1>
+            <h6 class="text-success text-center bg-white">{{ success_msg }}</h6>
+            <h6 class="text-danger text-center bg-white">{{ error_msg }}</h6>
+            <div class="row">
+                <!-- <div class="col-md-6 col-lg-5 d-none d-md-block">
 
-        <div class="row">
-            <div class="col-sm-4">
+                <img src="{% static 'image/kokologo.png' %}"
+                
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:450px;" />
+              </div>  -->
+                <div class="col-sm-4">
 
-               <div class="mm">
-                <label class="lbl">Current Password</label>
-                <div class="form-group_pass_show">
-                    <input type="password" value="" class="form-control" placeholder="Current Password" name="old">
-                </div>
-                <label>New Password</label>
-                <div class="form-group_pass_show">
-                    <input type="password" value="" class="form-control" placeholder="New Password" name="newpass">
-                </div>
-                <label>Confirm Password</label>
-                <div class="form-group_pass_show">
-                    <input type="password" value="" class="form-control" placeholder="Confirm Password"name ="re_pass">
-                </div>
-                <br>
-                <div>
+                    <div class="mm">
+                        <label class="lbl">Current Password</label>
+                        <div class="form-group_pass_show">
+                            <input type="password" value="" class="form-control" placeholder="Current Password"
+                                name="old_password">
+                        </div>
+                        <label>New Password</label>
+                        <div class="form-group_pass_show">
+                            <input type="password" value="" class="form-control" placeholder="New Password"
+                                name="new_password">
+                        </div>
+                        <label>Confirm Password</label>
+                        <div class="form-group_pass_show">
+                            <input type="password" value="" class="form-control" placeholder="Confirm Password"
+                                name="re_password">
+                        </div>
+                        <br>
+                        <!-- <div>
                     <a href="{% url 'customer:home' %}">
                         <input id="btn" type="button" value="SUBMIT"></a>
                         <a href="{% url 'customer:change_pass' %}">
                         <input id="btn" type="button" value="CANCEL"></a>
+                </div> -->
+
+                        <button type="submit" class="">Submit</button>
+
+                    </div>
+                    <br><br><br><br>
                 </div>
-               </div>
-<br><br><br><br>
             </div>
         </div>
     </div>
-</div>
+</form>
 <!-- js code 
 $(document).ready(function(){
     $('.pass_show').append('<span class="ptxt">Show</span>');  

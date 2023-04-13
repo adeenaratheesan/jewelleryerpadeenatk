@@ -15,7 +15,21 @@ urlpatterns=[
    path('product_detail/<int:pid>',views.product_detail,name='product_detail'),
    path('delete_item/<int:pid>',views.delete_item,name='delete_item'),
    path('cmia/',views.cmia,name='cmia'),
-  
+
+   path('order_product/',views.order_product,name='order_product'),
+   path('updatepayment/',views.updatepayment,name='updatepayment'),
+
+
+
+   # path('order_details/',views.order_details,name='order_details'),
+   # path('change_qty',views.change_qty,name="change_qty"),
+
+   # path('orderpayment/',views.orderpayment,name='orderpayment'),
+   # path('update_payment/',views.update_payment,name='update_payment'),
+   # path('pay/',views.pay,name='pay'),
+   # path('update/',views.update,name='update'),
+
+   
 
 
 ]
