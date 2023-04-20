@@ -6,6 +6,7 @@ from admins.models import Product
 from customer.models import Mycart
 from home.models import Customer, Seller
 from jewelleryerp import settings
+from django.db.models import Q
 
 
 # Create your views here.
@@ -180,3 +181,26 @@ def email_exist(request):
     status=Customer.objects.filter(e_mail=email).exists()
     print(status)
     return JsonResponse({'status':status})
+
+def search(request):
+    products = []
+    count = 0
+
+    if request.method == 'GET':
+        print('in get method')
+        searched = request.GET.get('search')
+        print(searched)
+        if searched:
+            products = Product.objects.filter(Q(category__icontains=searched) | Q(p_name__icontains=searched))
+
+            print(products)
+            count = products.count()            
+    context = {
+        'result': products,
+        'count':count
+    }
+    return render(request, 'home_templates/search.html', context)
+
+
+
+

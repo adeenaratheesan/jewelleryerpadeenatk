@@ -3,50 +3,56 @@
 {% load static %}
 {% block content %}
 <style>
-     img {
+    img {
         width: 100px;
         height: 100px;
     }
 </style>
 <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-<div>
-    <div class="containermy">
-        <h1 class="myorders">MY ORDERS</h1>
+    <div>
+        <div class="containermy">
+            <h1 class="myorders">MY ORDERS</h1>
+        </div>
     </div>
-</div>
-<div class="content">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">slno.</th>
-                <th scope="col">Product Image</th>
-                <th scope="col">Name</th>
-                <th scope="col">Status</th>
-                <!-- <th scope="col">Name</th> -->
+    <div class="content">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">slno.</th>
+                    <th scope="col">Product Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Status</th>
+                    <!-- <th scope="col">Name</th> -->
 
-                <!-- <th scope="col">Delivered on</th> -->
+                    <!-- <th scope="col">Delivered on</th> -->
 
-            </tr>
-            {% for Mycart in data %}
-            <tr>
-                <th scope="row">{{forloop.counter}}</th>
-                <td>
-                    <div class="prod_img">
-                        <img src="{{Mycart.product.p_image.url}}" alt="">
-                </td>
+                </tr>
+                {% for Mycart in orders %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>
+                        <div class="prod_img">
+                            <img src="{{Mycart.productid.p_image.url}}" alt="">
+                    </td>
 
-                <td>
-                    {{Mycart.product.p_name}}
-                </td>
-                
-                
-            </tr>
-            {% endfor %}
+                    <td>
+                        {{Mycart.productid.p_name}}
+                    </td>
+                    <td>
+                        {{Mycart.quantity}}
+                    </td>
 
-        </thead>
-    </table>
-</div>
+                    <td>
+                        {{Mycart.status}}
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </thead>
+        </table>
+    </div>
 </form>
 
 

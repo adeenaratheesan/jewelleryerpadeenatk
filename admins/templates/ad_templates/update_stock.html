@@ -4,14 +4,27 @@
 <style>
     .td {
         padding: 50px;
-        margin-left: 100px;
+        margin-left: 500px;
       
     }
 
     #bb {
-        margin-left: 400px;
+        margin-left: 200px;
     }
+    img {
+        width: 100px;
+        height: 100px;
+    }
+    .upd{
+        background-color: rgb(84, 55, 70);
+    }
+    .txt{
+        color: aliceblue;
+    }
+    #update{
+        color: aliceblue;
 
+    }
 </style>
 
 
@@ -26,13 +39,13 @@
                 <tr>
                     <td>
                         <div class="inpu">
-                            <label for="">Image</label><br>
+                            <label class="txt">Image</label><br>
                             <div>
                                 <div>
                                     <button class="btn btn-secondary">
-                                        <img src="{{data.p_image.url}}" height="25%" width="25%" /></button><br>
+                                        <img src="{{data.p_image.url}}"/></button><br>
                                     <!-- <span>{{msg}}</span> -->
-                                    Upload photo <input type="file" id="myfile" name="ppimg"> <br>
+                                    <label class="txt">Upload photo</label> <input type="file" id="myfile" name="ppimg"> <br>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +59,7 @@
                 <tr>
                     <td>
                         <div>
-                            <label for="">Product Category</label>
+                            <label class="txt">Product Category</label><br>
                             <input type="text" name="pcate" value="{{data.category}}">
                         </div><br>
                     </td>
@@ -54,7 +67,7 @@
                 <tr>
                     <td>
                         <div>
-                            <label for="">Product Type</label>
+                            <label class="txt">Product Type</label><br>
                             <input type="text" name="ptype" id="ppnum" value="{{data.type}}">
                         </div><br>
                     </td>
@@ -62,7 +75,7 @@
                 <tr>
                     <td>
                         <div>
-                            <label for="">Product Name</label>
+                            <label class="txt">Product Name</label><br>
                             <input type="text" name="pname" id="ppname" value="{{data.p_name}}">
                         </div><br>
                     </td>
@@ -70,7 +83,7 @@
                 <tr>
                     <td>
                         <div>
-                            <label for="">Product Number</label>
+                            <label class="txt">Product Number</label><br>
                             <input type="text" name="pnum" id="ppnum" value="{{data.p_number}}">
                         </div><br>
 
@@ -81,7 +94,7 @@
                     <td>
 
                         <div>
-                            <label for="">Description</label>
+                            <label class="txt">Description</label><br>
                             <input type="text" name="pdec" id="ppdec" value="{{data.description}}">
                         </div><br>
                     </td>
@@ -89,7 +102,7 @@
                 <tr>
                     <td>
                         <div>
-                            <label for="">Stock</label>
+                            <label class="txt">Stock</label><br>
                             <input type="text" name="cstock" id="pcstock" value="{{data.p_stock}}">
                         </div><br>
                     </td>
@@ -98,7 +111,7 @@
                 <tr>
                     <td>
                         <div>
-                            <label for="">Product price</label>
+                            <label class="txt">Product price</label><br>
                             <input type="text" name="pprice" id="pprice" value="{{data.p_price}}">
                         </div><br>
                     </td>

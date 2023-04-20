@@ -100,7 +100,10 @@ input[type=text]:focus {
                             <img class="tanishqimg" src="{% static 'images/Tanishq.jpg' %}" ,width="1px" ,height="1px">
                         </td>
                         <td colspan="2" align="center">
-                            <input type="text" name="search" placeholder="Search..">
+                            <form action="{% url 'customer:search' %}" method="get">
+
+                                <input type="text" name="search" placeholder="Search..">
+                            </form> 
                   
                         </td>
                         <td><a href="{% url 'customer:home' %}"><label id="mlabel">Home</label></a></td>
@@ -169,7 +172,7 @@ input[type=text]:focus {
                             </td>
                             <td>
                                 <div class="dropdown">
-                                    <a href="" id="mia"> <button
+                                    <a href="{% url 'customer:cmia' %}" id="mia"> <button
                                             class="dropbtn">MIA</a></button>
 
                                 </div>

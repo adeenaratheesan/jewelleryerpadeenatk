@@ -2,6 +2,12 @@
 
 {% load static %}
 {% block content %}
+<style>
+    img {
+        width: 100px;
+        height: 100px;
+    }
+</style>
 <div>
     <div class="containermy">
 <h1 class="myorders">RECENT ORDERS</h1>
@@ -19,6 +25,30 @@
                 <th scope="col">Customer Address</th>
                 
             </tr>
+            {% for Mycart in orders %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>
+                        <div class="prod_img">
+                            <img src="{{Mycart.productid.p_image.url}}" alt="">
+                    </td>
+
+                    <td>
+                        {{Mycart.productid.p_name}}
+                    </td>
+                    <td>
+                        {{Mycart.quantity}}
+                    </td>
+
+                    <td>
+                        {{Mycart.customer.name}}
+                    </td>
+                    <td>
+                        {{Mycart.customer.address}}
+                    </td>
+                </tr>
+                {% endfor %}
+
 
         </thead>
     </table>

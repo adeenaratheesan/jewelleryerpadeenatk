@@ -21,7 +21,7 @@ urlpatterns=[
 
 
 
-   # path('order_details/',views.order_details,name='order_details'),
+   path('search/',views.search,name='search'),
    # path('change_qty',views.change_qty,name="change_qty"),
 
    # path('orderpayment/',views.orderpayment,name='orderpayment'),

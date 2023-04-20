@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse, JsonResponse
 
 from admins.models import Admins, Category, Product, Style, Type
+from customer.models import Order_detail
 from home.models import Seller
 
 # Create your views here.
@@ -28,7 +29,8 @@ def logout(request):
 def home(request):
     account_dt=Seller.objects.get(id=request.session['admin'])
     return render(request,'ad_templates/home.html',{'data':account_dt})
-
+    # return render(request,'ad_templates/home.html')
+                  
 def master(request):
     return render(request,'ad_templates/master.html')
 
@@ -145,7 +147,9 @@ def product_catelogue(request):
 #     return render(request,'sel_templates/product_catelogue.html',{'data':product_details})
 
 def recent_orders(request):
-    return render(request,'ad_templates/recent_orders.html')
+    orders=Order_detail.objects.filter(customer_id=request.session['customer'])
+
+    return render(request,'ad_templates/recent_orders.html',{'orders':orders})
 
 def update_stock(request,pid):
     msg=''

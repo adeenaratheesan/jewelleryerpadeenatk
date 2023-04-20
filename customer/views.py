@@ -164,18 +164,98 @@ def order_product(request):
         payment = client.order.create(
              { "amount": float(order_amt)*100, "currency": "INR", "payment_capture": "1",'notes':notes}
          )
-        
-    
-  
+        customer=request.session['customer']
+        new_order=Order(
+            customer_id=customer,
+            amount=request.session['grand'],
+            provider_order_id=payment['id'],
+            status='pending'
+
+        )
+        new_order.save()
+        request.session['order_id']=new_order.id
     return JsonResponse(payment)
 
 def updatepayment(request):
+    # user_id=request.session['customer']
+    # Order.objects.filter(id=request.session['oid'],customer_id=user_id, status='pending').update(status="paid")
+    # pid=Order.objects.filter(id=request.session['oid'],customer_id=user_id, status='pending')
+    # print('hello')
+    # print(pid)
+   
+    # customer_id=request.session['customer']
+    # products=Mycart.objects.filter(customer_id=customer_id) 
 
+    # for pro in products:
+
+    #     print(pro.product)
+
+    #     order=Order_detail(customer_id=customer_id,
+    #                 productid_id=pro.product,
+    #                 price=pro.product.price,
+    #                 quantity=pro.qty,
+    #                 status="paid",
+    #                 payment_type="Razorpay",
+    #                 order_id= pid[0].id,
+    #     )
+    #     order.save()
+    #     products.delete()
+
+    # Order_detail.objects.filter(customer_id=customer_id, status='order_pending',order_id=request.session['oid']).update(status='paid')
+   
+
+    # return JsonResponse({'resp':"success"})
     if request.method=='POST':
-        pid=request.POST['pid'],
-        oid=request.POST['oid'],
-        sig=request.POST['sig'],
-        print(pid,oid,sig)
-    customerid=request.session['customer']
-    Order.objects.filter(customer_id=customerid,status='add to cart').update(status='paid')
-    return JsonResponse({'resp':"success"})
+        # amount=request.POST['grandtotal']
+        paymentid=request.POST['pid']
+        orderid=request.POST['oid']
+        sigid=request.POST['sig']
+        orderqty=0
+        updateorderDetail=Order.objects.filter(provider_order_id=orderid).update(
+            payment_id=paymentid,
+            signature_id=sigid,
+            status='paid'
+        )
+        order_id=request.session['order_id']
+        cartitem=Mycart.objects.filter(customer=request.session['customer'])
+        for singleitem in cartitem:
+            new_order_details=Order_detail(
+                customer_id=singleitem.customer_id,
+                productid_id=singleitem.product_id,
+                price=singleitem.product.p_price,
+                quantity=singleitem.quantity,
+                status='paid',
+                payment_type='razorpay',
+                order_id=order_id,
+
+                )
+            new_order_details.save()
+            orderqty=int(singleitem.quantity)
+            stockUpdate=Product.objects.get(id=singleitem.product_id)
+            stockUpdate.p_stock=stockUpdate.p_stock-orderqty
+            stockUpdate.save()
+            cartitem.delete()
+    return JsonResponse({'halo': 'hii'})
+
+def search(request):
+    products = []
+    count = 0
+
+    if request.method == 'GET':
+        print('in get method')
+        searched = request.GET.get('search')
+        print(searched)
+        if searched:
+            products = Product.objects.filter(Q(category__icontains=searched) | Q(p_name__icontains=searched))
+
+            print(products)
+            count = products.count()            
+    context = {
+        'result': products,
+        'count':count
+    }
+    return render(request, 'cus_templates/search.html', context)
+
+
+
+
